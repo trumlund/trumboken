@@ -29,10 +29,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="bg-brand p-2.5 rounded-xl text-white group-hover:rotate-12 transition-transform shadow-lg shadow-brand/20">
-              <Music size={28} />
-            </div>
+          <Link to="/" className="group">
             <span className={`font-display text-2xl font-black italic tracking-tighter ${scrolled ? "text-neutral-900" : "text-neutral-900"}`}>
               TRUMBOKEN
             </span>
@@ -51,12 +48,14 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Link
-              to="/bocker"
+            <a
+              href="https://notposten.se/search?q=trumboken"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-brand text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-brand-dark transition-colors shadow-lg shadow-brand/20"
             >
               Köp nu
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -91,13 +90,15 @@ export default function Navbar() {
                   {link.name}
                 </Link>
               ))}
-              <Link
-                to="/bocker"
+              <a
+                href="https://notposten.se/search?q=trumboken"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="block bg-brand text-white px-5 py-3 rounded-xl text-center font-semibold"
               >
                 Köp nu
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

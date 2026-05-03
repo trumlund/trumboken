@@ -70,14 +70,12 @@ export default function BookDetail() {
               <div className="text-4xl font-display font-bold text-neutral-900 mr-6">
                 {book.price}
               </div>
-              <a
-                href={book.buyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/#aterforsaljare"
                 className="flex-1 bg-brand text-white px-8 py-5 rounded-2xl font-bold text-lg hover:bg-brand-dark transition-all flex items-center justify-center gap-2 shadow-2xl shadow-brand/30"
               >
-                <ShoppingCart size={24} /> Köp direkt på Bokus
-              </a>
+                <ShoppingCart size={24} /> Köp här
+              </Link>
             </div>
             
             <div className="grid grid-cols-3 gap-4 pt-8">

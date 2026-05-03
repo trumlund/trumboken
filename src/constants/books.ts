@@ -23,7 +23,7 @@ export const BOOKS: Book[] = [
       "Roliga spelövningar",
       "Passar alla åldrar"
     ],
-    buyUrl: "https://www.bokus.com/bok/9789197945608/trumboken-1/"
+    buyUrl: "https://www.notposten.se/sok?freetext=trumboken"
   },
   {
     id: "trumboken-2",
@@ -38,7 +38,7 @@ export const BOOKS: Book[] = [
       "Fördjupad teknik",
       "Spelförståelse"
     ],
-    buyUrl: "https://www.bokus.com/bok/9789197945615/trumboken-2/"
+    buyUrl: "https://www.notposten.se/sok?freetext=trumboken"
   },
   {
     id: "trumboken-3",
@@ -53,7 +53,7 @@ export const BOOKS: Book[] = [
       "Masterclass-nivå",
       "Komplex kordination"
     ],
-    buyUrl: "https://www.bokus.com/bok/9789197945622/trumboken-3/"
+    buyUrl: "https://www.notposten.se/sok?freetext=trumboken"
   },
   {
     id: "samlade-komp",
@@ -68,6 +68,6 @@ export const BOOKS: Book[] = [
       "Perfekt för lärare",
       "Kompakt format"
     ],
-    buyUrl: "https://www.bokus.com/bok/9789163345678/trumboken-samlade-komp/"
+    buyUrl: "https://www.notposten.se/sok?freetext=trumboken"
   }
 ];

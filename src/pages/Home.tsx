@@ -18,8 +18,8 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-bold uppercase tracking-wider mb-6">
               <Drum size={14} /> Sveriges enda multimodala trumbokserie
             </div>
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-[1.1]">
-              Lär dig spela <span className="text-brand">trumset.</span>
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-[1.1] text-neutral-900">
+              Lär dig spela trumset
             </h1>
             <p className="text-lg text-neutral-600 mb-8 max-w-lg leading-relaxed">
               Trumboken är en metodisk och stimulerande serie spelböcker som tar dig 
@@ -202,6 +202,47 @@ export default function Home() {
             <div id="pdf-viewer" className="relative h-[500px]">
               <PDFViewer />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Retailers Section */}
+      <section id="aterforsaljare" className="py-24 px-4 bg-white border-y border-neutral-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Här kan du köpa Trumboken</h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto">
+              Trumboken finns hos de flesta välsorterade musikaffärer och bokhandlare på nätet. 
+              Välj din favoritbutik nedan för att se aktuella priser och lagerstatus.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { name: "Notposten", url: "https://notposten.se/search?q=trumboken" },
+              { name: "Bokus", url: "https://www.bokus.com/sok?q=trumboken" },
+              { name: "Adlibris", url: "https://www.adlibris.com/se/sok?q=trumboken" },
+              { name: "CDON", url: "https://cdon.se/catalog/search?q=trumboken" }
+            ].map((retailer, i) => (
+              <a 
+                key={i}
+                href={retailer.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-8 rounded-2xl bg-neutral-50 border border-neutral-100 flex flex-col items-center justify-center hover:bg-white hover:shadow-xl hover:border-brand/20 transition-all"
+              >
+                <div className="text-xl font-bold text-neutral-900 group-hover:text-brand transition-colors mb-2">
+                  {retailer.name}
+                </div>
+                <div className="text-xs text-neutral-400 font-bold uppercase tracking-widest">
+                  Besök butik
+                </div>
+              </a>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center text-sm text-neutral-400 italic">
+            * Priserna kan variera mellan olika återförsäljare.
           </div>
         </div>
       </section>

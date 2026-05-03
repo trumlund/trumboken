@@ -69,14 +69,12 @@ export default function Books() {
                   <div className="text-3xl font-display font-bold text-neutral-900 mr-4">
                     {book.price}
                   </div>
-                  <a
-                    href={book.buyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/#aterforsaljare"
                     className="bg-brand text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-dark transition-all flex items-center gap-2 shadow-lg shadow-brand/20"
                   >
-                    <ShoppingCart size={20} /> Köp på Bokus
-                  </a>
+                    <ShoppingCart size={20} /> Köp här
+                  </Link>
                   <Link
                     to={`/bocker/${book.id}`}
                     className="text-neutral-600 font-bold hover:text-brand transition-colors flex items-center gap-1 ml-2"

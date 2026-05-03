@@ -6,8 +6,7 @@ export default function Footer() {
     <footer className="bg-neutral-900 text-neutral-400 py-16 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="space-y-6">
-          <Link to="/" className="flex items-center gap-3 text-white group">
-            <Music size={32} className="text-brand group-hover:rotate-12 transition-transform" />
+          <Link to="/" className="text-white group">
             <span className="font-display text-2xl font-black italic tracking-tighter">
               TRUMBOKEN
             </span>

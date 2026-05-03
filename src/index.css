@@ -5,8 +5,8 @@
   --font-sans: "Rubik", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Rubik", sans-serif;
   
-  --color-brand: #f97316; /* Vibrant Orange */
-  --color-brand-dark: #ea580c;
+  --color-brand: #098f96; /* Requested Turquoise */
+  --color-brand-dark: #07747a;
 }
 
 @layer base {
