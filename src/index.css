@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@theme {
+  --font-sans: "Rubik", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Rubik", sans-serif;
+  
+  --color-brand: #f97316; /* Vibrant Orange */
+  --color-brand-dark: #ea580c;
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-50 text-neutral-900 font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
