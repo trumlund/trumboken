@@ -113,6 +113,7 @@ export default function Lararsida() {
       title: "TRUMNYCKEL",
       description: "En trumnyckel i A3 att ladda ner. Skriv ut och sätt upp på väggen!",
       icon: Layout,
+      image: "https://trumboken.se/wp-content/uploads/2020/04/Trumsetet_som_noter_A3.jpg",
       items: [
         { name: "Ladda ner Trumnyckel (A3)", url: "https://trumboken.se/wp-content/uploads/2022/10/Trumnyckel-A3.pdf" }
       ]
@@ -220,7 +221,9 @@ export default function Lararsida() {
             Lärarsida
           </h1>
           <p className="text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto font-medium">
-            Här finns spellistor till alla låtar i böckerna, de flesta av övningslåtarna utan klickspår, diplom till eleverna och rättelser till de olika upplagorna!
+            Välkommen till din resursbank! Här har vi samlat allt från spellistor och övningslåtar till 
+            pedagogiska idéer, rytmikövningar och inspiration för din trumundervisning. 
+            Ladda ner diplom, trumnycklar och tavelnoter direkt till dina lektioner.
           </p>
         </header>
 
