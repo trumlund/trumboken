@@ -11,7 +11,7 @@ export default function Lararsida() {
       id: "spellistor",
       title: "SPELLISTOR",
       description: "Här hittar du alla spellistor till böckerna. Både Spotify och YouTube!",
-      icon: Music,
+      icon: Circle play,
       items: [
         { 
           name: "Alla Spotify-listor i böckerna!", 
@@ -221,9 +221,8 @@ export default function Lararsida() {
             Lärarsida
           </h1>
           <p className="text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto font-medium">
-            Välkommen till din resursbank! Här har vi samlat allt från spellistor och övningslåtar till 
-            pedagogiska idéer, rytmikövningar och inspiration för din trumundervisning. 
-            Ladda ner diplom, trumnycklar och tavelnoter direkt till dina lektioner.
+            Här finns allt från spellistor och övningslåtar till 
+            pedagogiska idéer för din trumundervisning. Ladda ner material gratis till dina lektioner.
           </p>
         </header>
 
