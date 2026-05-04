@@ -13,7 +13,11 @@ export default function Lararsida() {
       description: "Här hittar du alla spellistor till böckerna. Både Spotify och YouTube!",
       icon: Music,
       items: [
-        { name: "Alla Spotify-listor i böckerna!", url: "https://open.spotify.com/artist/7nMJpFV1wiUXFjevtrXECB?si=UgoyWYpuTxeSvAzh5WNrQg&nd=1&dlsi=85908dfc813645d0" },
+        { 
+          name: "Alla Spotify-listor i böckerna!", 
+          url: "https://open.spotify.com/artist/7nMJpFV1wiUXFjevtrXECB?si=UgoyWYpuTxeSvAzh5WNrQg&nd=1&dlsi=85908dfc813645d0",
+          iconImg: "https://trumboken.se/wp-content/uploads/2023/05/Sociala-ikoner-05.png"
+        },
         { name: "Alla videolektioner del 1 (offentliga) som spellista på Youtube", url: "https://www.youtube.com/playlist?list=PLGrOu3RDYprn_NaEN5Jd2vmymMWjeT-z_" },
         { 
           name: "Min lärarkanal på Youtube", 
@@ -27,8 +31,13 @@ export default function Lararsida() {
       title: "ÖVNINGSLÅTARNA UTAN KLICK",
       description: "Vill du eller dina elever spela upp övningslåtarna utan klick? Kanske med klick i egna hörlurar men inte ut i PA?",
       icon: Headphones,
+      image: "https://trumboken.se/wp-content/uploads/2023/12/Bandcamp-logo-768x432.png",
       items: [
-        { name: "Trumboken på Bandcamp.com", url: "https://trumboken.bandcamp.com/" }
+        { 
+          name: "Trumboken på Bandcamp.com", 
+          url: "https://trumboken.bandcamp.com/",
+          iconImg: "https://trumboken.se/wp-content/uploads/2023/05/Sociala-ikoner-07.png"
+        }
       ]
     },
     {
@@ -235,6 +244,18 @@ export default function Lararsida() {
                     {section.description}
                   </p>
                   
+                  {/* Single Featured Image */}
+                  {(section as any).image && (
+                    <div className="mb-8 max-w-sm rounded-2xl overflow-hidden border border-neutral-100 bg-white p-2">
+                      <img 
+                        src={(section as any).image} 
+                        alt={section.title} 
+                        className="w-full h-auto object-contain"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                  )}
+
                   {/* Grid for standard items */}
                   {section.items && section.items.length > 0 && !(section as any).subsections && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
@@ -264,7 +285,17 @@ export default function Lararsida() {
                             className="flex flex-col p-5 rounded-2xl bg-white border border-neutral-200 text-neutral-900 hover:border-brand hover:text-brand transition-all group/item shadow-sm"
                           >
                             <div className="flex items-center justify-between font-bold">
-                              {item.name}
+                              <div className="flex items-center gap-3">
+                                {item.iconImg && (
+                                  <img 
+                                    src={item.iconImg} 
+                                    alt="" 
+                                    className="w-6 h-6 object-contain"
+                                    referrerPolicy="no-referrer"
+                                  />
+                                )}
+                                {item.name}
+                              </div>
                               {item.url.includes("youtube.com") ? <Youtube size={18} className="text-red-600" /> : <ExternalLink size={18} className="opacity-30 group-hover/item:opacity-100 shrink-0" />}
                             </div>
                             {item.description && (
