@@ -245,7 +245,7 @@ export default function Lararsida() {
                   </p>
                   
                   {/* Single Featured Image */}
-                  {(section as any).image && (
+                  {(section as any).image && section.id !== 'utan-klick' && (
                     <div className="mb-8 max-w-sm rounded-2xl overflow-hidden border border-neutral-100 bg-white p-2">
                       <img 
                         src={(section as any).image} 
@@ -256,56 +256,71 @@ export default function Lararsida() {
                     </div>
                   )}
 
-                  {/* Grid for standard items */}
+                  {/* Standard Grid for items OR custom layout for Utan Klick */}
                   {section.items && section.items.length > 0 && !(section as any).subsections && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                      {section.items.map((item: any, idx: number) => (
-                        item.isInternal ? (
-                          <Link
-                            key={idx}
-                            to={item.url}
-                            className="flex flex-col p-5 rounded-2xl bg-white border border-neutral-200 text-neutral-900 hover:border-brand hover:text-brand transition-all group/item shadow-sm"
-                          >
-                            <div className="flex items-center justify-between font-bold">
-                              {item.name}
-                              <ExternalLink size={18} className="opacity-30 group-hover/item:opacity-100 shrink-0" />
-                            </div>
-                            {item.description && (
-                              <div className="text-sm font-medium text-neutral-500 mt-1">
-                                {item.description}
-                              </div>
-                            )}
-                          </Link>
-                        ) : (
-                          <a
-                            key={idx}
-                            href={item.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex flex-col p-5 rounded-2xl bg-white border border-neutral-200 text-neutral-900 hover:border-brand hover:text-brand transition-all group/item shadow-sm"
-                          >
-                            <div className="flex items-center justify-between font-bold">
-                              <div className="flex items-center gap-3">
-                                {item.iconImg && (
-                                  <img 
-                                    src={item.iconImg} 
-                                    alt="" 
-                                    className="w-6 h-6 object-contain"
-                                    referrerPolicy="no-referrer"
-                                  />
-                                )}
+                    <div className={section.id === 'utan-klick' ? "grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8" : "grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"}>
+                      <div className={section.id === 'utan-klick' ? "space-y-4" : "contents"}>
+                        {section.items.map((item: any, idx: number) => (
+                          item.isInternal ? (
+                            <Link
+                              key={idx}
+                              to={item.url}
+                              className="flex flex-col p-5 rounded-2xl bg-white border border-neutral-200 text-neutral-900 hover:border-brand hover:text-brand transition-all group/item shadow-sm"
+                            >
+                              <div className="flex items-center justify-between font-bold">
                                 {item.name}
+                                <ExternalLink size={18} className="opacity-30 group-hover/item:opacity-100 shrink-0" />
                               </div>
-                              {item.url.includes("youtube.com") ? <Youtube size={18} className="text-red-600" /> : <ExternalLink size={18} className="opacity-30 group-hover/item:opacity-100 shrink-0" />}
-                            </div>
-                            {item.description && (
-                              <div className="text-sm font-medium text-neutral-500 mt-1">
-                                {item.description}
+                              {item.description && (
+                                <div className="text-sm font-medium text-neutral-500 mt-1">
+                                  {item.description}
+                                </div>
+                              )}
+                            </Link>
+                          ) : (
+                            <a
+                              key={idx}
+                              href={item.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex flex-col p-5 rounded-2xl bg-white border border-neutral-200 text-neutral-900 hover:border-brand hover:text-brand transition-all group/item shadow-sm"
+                            >
+                              <div className="flex items-center justify-between font-bold">
+                                <div className="flex items-center gap-3">
+                                  {item.iconImg && (
+                                    <img 
+                                      src={item.iconImg} 
+                                      alt="" 
+                                      className="w-6 h-6 object-contain"
+                                      referrerPolicy="no-referrer"
+                                    />
+                                  )}
+                                  {item.name}
+                                </div>
+                                {item.url.includes("youtube.com") ? <Youtube size={18} className="text-red-600" /> : <ExternalLink size={18} className="opacity-30 group-hover/item:opacity-100 shrink-0" />}
                               </div>
-                            )}
-                          </a>
-                        )
-                      ))}
+                              {item.description && (
+                                <div className="text-sm font-medium text-neutral-500 mt-1">
+                                  {item.description}
+                                </div>
+                              )}
+                            </a>
+                          )
+                        ))}
+                      </div>
+
+                      {section.id === 'utan-klick' && (section as any).image && (
+                        <div className="max-w-[150px]">
+                          <div className="rounded-2xl overflow-hidden border border-neutral-100 bg-white p-2 shadow-sm">
+                            <img 
+                              src={(section as any).image} 
+                              alt={section.title} 
+                              className="w-full h-auto object-contain"
+                              referrerPolicy="no-referrer"
+                            />
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
 
