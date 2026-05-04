@@ -1,10 +1,83 @@
 import { motion } from "motion/react";
-import { Play, BookOpen, Star, ChevronRight, Drum, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
+import { Play, BookOpen, Star, ChevronRight, Drum, CheckCircle2, Volume2, Plus } from "lucide-react";
 import { Link } from "react-router-dom";
+
 import { BOOKS } from "../constants/books";
 import PDFViewer from "../components/PDFViewer";
 
+const TESTIMONIALS = [
+  {
+    text: "Äntligen en trumskola som känns modern, med en tydlig pedagogisk idé, bra progression, gediget innehåll och grymt bra play-alongs. Ser fram emot fler böcker!",
+    author: "LUCAS EDMAN",
+    title: "Ulricehamns kulturskola"
+  },
+  {
+    text: "Jag rekommenderar varmt dessa böcker med alla musikexempel som ger elever musikalisk kontext och spelglädje! Pedagogiska och tydliga, ett bra underlag för både elev och lärare.",
+    author: "SAM LUNDBERG",
+    title: "Slagverkslärare"
+  },
+  {
+    text: "Fantastiskt bra och breda böcker! Stor glädje när eleverna självmant vill spela Radetsky March på konsert och en elev blev nyfiken på vispspel i del2 och nu spelar Sonny Rollins!",
+    author: "JOHN FERNOLD",
+    title: "Mejeriets musikskola, Lund"
+  },
+  {
+    text: "Toppen böcker med bra progression!",
+    author: "JOHAN GRUNDTMAN",
+    title: "Älvsbyns kulturskola"
+  },
+  {
+    text: "Riktigt trevliga trumböcker med ett bra innehåll och upplägg!",
+    author: "JOHAN STRÖMBERG",
+    title: "Skellefteå kulturskola"
+  },
+  {
+    text: "Fantastiskt multimodalt undervisningsmaterial och väl uttänkt upplägg! Mina både yngre och äldre elever använder böckerna. Rekommenderar starkt!",
+    author: "LOVISA FHINN",
+    title: "Forshaga kulturskola"
+  },
+  {
+    text: "Äntligen en modern, rolig bok för alla som vill spela trumset, även de yngsta nybörjarna!",
+    author: "SIMON LILJEBLAD",
+    title: "Upplands-Bro kulturskola"
+  },
+  {
+    text: "Den bästa svenska trumboken med kreativa sätt att lära sig spela!",
+    author: "LINA ANDERBERG",
+    title: "Frilanstrummis, Zara Larsson m.fl."
+  },
+  {
+    text: "Kommer!",
+    author: "MARTIN SALOMONSSON",
+    title: "Kulturskolan Göteborg"
+  },
+  {
+    text: "Kommer!",
+    author: "STEFAN STURESSON",
+    title: "Kulturskolan Vaggeryd"
+  },
+  {
+    text: "Jag använder Trumboken med alla nybörjarelever och kan verkligen rekommendera den på grund av bredden och den långsamma progressionen. Stort plus för videorna som hör till varje moment!",
+    author: "MATTIAS PUTTONEN",
+    title: "Solna kulturskola"
+  },
+  {
+    text: "Vi använder del 1 med alla nya elever. Tydligt skriven bok med en bra progression och bra förslag på låtar för elever att spela. Inte för lätt och inte för svår!",
+    author: "JARL KYNKÄÄNNIEMI",
+    title: "Linköpings kulturskola"
+  },
+  {
+    text: "Trumboken är jättebra, roliga låtar och jag gillar knep&knåp!",
+    author: "JULIA, 10 ÅR",
+    title: "Slagverkselev"
+  }
+];
+
 export default function Home() {
+  const [showAll, setShowAll] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const visibleTestimonials = showAll ? TESTIMONIALS : TESTIMONIALS.slice(0, 9);
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -21,8 +94,11 @@ export default function Home() {
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-[1.1] text-neutral-900">
               Lär dig spela trumset
             </h1>
+            <p className="text-xl font-bold text-neutral-900 mb-2">
+              Enkelt, roligt och snabbt!
+            </p>
             <p className="text-lg text-neutral-600 mb-8 max-w-lg leading-relaxed">
-              Trumboken är en metodisk och stimulerande serie spelböcker som tar dig 
+              Trumboken är en metodisk och stimulerande bokserie som tar dig 
               hela vägen från de första slagen till avancerat spel.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -48,13 +124,24 @@ export default function Home() {
             id="video"
             className="bg-white p-4 rounded-3xl shadow-2xl shadow-neutral-200"
           >
-            <div className="video-container rounded-2xl overflow-hidden shadow-inner bg-neutral-900">
+            <div className="video-container rounded-2xl overflow-hidden shadow-inner bg-neutral-900 relative group">
               <iframe
-                src="https://www.youtube.com/embed/wX-y0M_fLzg"
+                src={`https://www.youtube.com/embed/nvU2AWSQ0iI?autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&loop=1&playlist=nvU2AWSQ0iI&rel=0`}
                 title="Trumboken Introduktion"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
+              
+              <button 
+                onClick={() => setIsMuted(!isMuted)}
+                className="absolute bottom-4 right-4 bg-black/40 backdrop-blur-md p-3 rounded-full text-white opacity-80 hover:opacity-100 transition-all hover:scale-110 z-10"
+              >
+                {isMuted ? (
+                  <Volume2 size={24} className="opacity-50" />
+                ) : (
+                  <Volume2 size={24} className="text-brand" />
+                )}
+              </button>
             </div>
           </motion.div>
         </div>
@@ -63,20 +150,30 @@ export default function Home() {
         <div className="absolute top-1/2 -right-64 w-128 h-128 bg-brand/5 rounded-full blur-3xl -z-10" />
       </section>
 
-      {/* Stats/Benefits */}
-      <section className="py-24 bg-white border-y border-neutral-100">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { label: "Böcker i serien", value: "5+" },
-            { label: "År av erfarenhet", value: "25+" },
-            { label: "Nöjda elever", value: "10k+" },
-            { label: "Nivåer", value: "Allt" },
-          ].map((stat, i) => (
-            <div key={i} className="text-center">
-              <div className="text-4xl font-display font-bold text-brand mb-1">{stat.value}</div>
-              <div className="text-sm text-neutral-500 uppercase tracking-widest font-semibold">{stat.label}</div>
-            </div>
-          ))}
+
+      {/* Alla kan trumma! Section */}
+      <section className="py-24 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl lg:text-5xl font-medium text-neutral-900 mb-6">Alla kan trumma!</h2>
+            <p className="text-xl text-neutral-700 leading-relaxed font-medium">
+              Med tydliga förklaringar och alla videolektioner kommer du som nybörjare snabbt igång att spela – inga förkunskaper krävs!
+            </p>
+          </div>
+          
+          <div className="space-y-8 text-lg text-neutral-600 leading-relaxed">
+            <p>
+              Med övningslåtarna och massor av förslag på kända hits lär du dig spela olika musikstilar från hela världen. Du utvecklar ditt gehör, musikalitet, lär dig notläsning och förståelsen som musik som språk!
+            </p>
+            
+            <p>
+              Här på trumboken.se hittar du också en nybörjarguide, lättlästa noter på vissa låtförslag, praktiska tips och en lärarsida med pedagogiska resurser.
+            </p>
+            
+            <p className="text-2xl font-display font-bold text-brand text-center pt-4">
+              Nu spelar vi!
+            </p>
+          </div>
         </div>
       </section>
 
@@ -136,33 +233,44 @@ export default function Home() {
       <section className="py-24 px-4 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Vad säger användarna?</h2>
+            <h2 className="text-4xl font-bold mb-4 text-neutral-900">Vad säger användarna?</h2>
+            <p className="text-neutral-500 font-medium uppercase tracking-widest text-sm mb-8">Sagt om Trumboken</p>
             <div className="flex justify-center gap-1 text-brand">
               {[...Array(5)].map((_, i) => <Star key={i} size={20} fill="currentColor" />)}
             </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                text: "Bästa trumskolan jag använt. Pedagogisk och rolig!",
-                author: "Mikael, trumlärare"
-              },
-              {
-                text: "Trumboken 1 gjorde att jag lärde mig grunderna på nolltid.",
-                author: "Sara, elev"
-              },
-              {
-                text: "Perfekt struktur för både självstudier och undervisning.",
-                author: "Anders, frilansmusiker"
-              }
-            ].map((t, i) => (
-              <div key={i} className="p-8 rounded-3xl bg-neutral-50 relative">
-                <div className="text-neutral-600 italic mb-6">"{t.text}"</div>
-                <div className="font-bold text-neutral-900">— {t.author}</div>
-              </div>
+            {visibleTestimonials.map((t, i) => (
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: (i % 3) * 0.1 }}
+                viewport={{ once: true }}
+                className="p-10 rounded-[2.5rem] bg-neutral-50 border border-neutral-100 flex flex-col justify-between"
+              >
+                <div className="text-neutral-700 text-lg leading-relaxed mb-8">
+                  "{t.text}"
+                </div>
+                <div>
+                  <div className="font-medium text-neutral-900 uppercase tracking-wide">{t.author}</div>
+                  <div className="text-sm text-neutral-500">{t.title}</div>
+                </div>
+              </motion.div>
             ))}
           </div>
+
+          {!showAll && TESTIMONIALS.length > 9 && (
+            <div className="mt-16 text-center">
+              <button
+                onClick={() => setShowAll(true)}
+                className="inline-flex items-center gap-2 text-brand font-bold text-lg hover:gap-3 transition-all p-4 px-8 rounded-2xl bg-neutral-50 border border-neutral-100 hover:bg-white hover:shadow-xl group"
+              >
+                Visa fler <Plus size={20} className="group-hover:rotate-90 transition-transform" />
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -174,23 +282,17 @@ export default function Home() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/20 text-brand text-xs font-bold uppercase tracking-wider mb-6">
                 Prova på gratis
               </div>
-              <h2 className="text-4xl font-bold mb-6">Bläddra i Trumboken</h2>
+              <h2 className="text-4xl font-bold mb-6">Bläddra i Trumboken del 1</h2>
               <p className="text-neutral-400 mb-8 leading-relaxed">
-                Här kan du titta närmare på några exempelsidor ur Trumboken 1. 
-                Se själv hur pedagogiskt upplagd serien är.
+                Ta en tjuvtitt! Här ser du några sidor ur boken.
               </p>
-              <ul className="space-y-4 mb-8">
-                {[
-                  "Se notexempel och illustrationer",
-                  "Få en känsla för metodiken",
-                  "Ingen nedladdning krävs"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <CheckCircle2 size={18} className="text-brand" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              
+              <div className="bg-neutral-800/50 p-6 rounded-2xl border border-neutral-700 mb-8">
+                <p className="text-sm text-neutral-300 leading-relaxed italic">
+                  <span className="text-brand font-bold not-italic">OBS!</span> Förhandsvisningen visar inte ett exakt exemplar av Trumboken. Böckerna har spiralbindning (wire-o) och blir därför enkla att bläddra i och ha på ett notställ!
+                </p>
+              </div>
+
               <button 
                 onClick={() => document.getElementById('pdf-viewer')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-brand text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-dark transition-all flex items-center gap-2"

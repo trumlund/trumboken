@@ -1,88 +1,73 @@
 import { motion } from "motion/react";
-import { Drum, Music, Award, Users } from "lucide-react";
+import { Mail, Instagram, Facebook, Youtube } from "lucide-react";
 
 export default function About() {
   return (
     <div className="pt-32 pb-24 px-4 bg-white">
-      <div className="max-w-4xl mx-auto">
-        <header className="text-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="w-24 h-24 bg-brand rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl shadow-brand/20"
-          >
-            <Drum size={40} className="text-white" />
-          </motion.div>
-          <h1 className="text-5xl font-bold mb-6">Om Trumboken</h1>
-          <p className="text-xl text-neutral-600">
-            Historien bakom en av Sveriges mest populära serier för trumundervisning.
-          </p>
+      <div className="max-w-5xl mx-auto">
+        <header className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand/10 text-brand text-sm font-bold uppercase tracking-wider mb-6">
+            Författaren
+          </div>
+          <h1 className="text-5xl md:text-6xl font-black italic tracking-tighter mb-8 uppercase">
+            Christer Teglund
+          </h1>
         </header>
 
-        <div className="prose prose-neutral max-w-none space-y-12">
-          <section className="space-y-6">
-            <h2 className="text-3xl font-bold">Resan mot den perfekta trumskolan</h2>
-            <p className="text-lg text-neutral-600 leading-relaxed">
-              Trumboken föddes ur behovet av ett läromedel som var både pedagogiskt, 
-              stimulerande och tydligt. Christer Teglund, som själv arbetat som 
-              trumlärare i över 25 år, började utveckla materialet redan i slutet 
-              av 90-talet för att möta sina elevers specifika utmaningar.
-            </p>
-            <p className="text-lg text-neutral-600 leading-relaxed">
-              Sedan den första utgåvan kom har serien vuxit till att omfatta flera 
-              böcker som täcker allt från de mest grundläggande stegen till 
-              avancerat spel. Idag används Trumboken flitigt i kulturskolor, 
-              studieförbund och av privatlärare runt om i hela landet.
-            </p>
-          </section>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-12">
-            {[
-              { 
-                icon: Music, 
-                title: "Pedagogiskt fokus", 
-                description: "Vi tror på att lära sig genom att spela. Teorin introduceras naturligt i takt med praktiken." 
-              },
-              { 
-                icon: Award, 
-                title: "Kvalitet & Erfarenhet", 
-                description: "Varje övning har testats och finlipats i verklig undervisning med hundratals elever." 
-              },
-              { 
-                icon: Users, 
-                title: "För alla åldrar", 
-                description: "Sättet boken är upplagd på passar lika bra för barn som för vuxna nybörjare." 
-              },
-              { 
-                icon: Drum, 
-                title: "Komplett system", 
-                description: "Från grunderna i bok 1 till avancerade tekniker i bok 3 – en röd tråd genom hela lärandet." 
-              },
-            ].map((feature, i) => (
-              <div key={i} className="p-8 rounded-2xl bg-neutral-50 border border-neutral-100">
-                <feature.icon className="text-brand mb-4" size={32} />
-                <h4 className="text-xl font-bold mb-2">{feature.title}</h4>
-                <p className="text-neutral-600 text-sm leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <section className="bg-neutral-900 text-white p-12 rounded-[2rem] space-y-6 relative overflow-hidden">
-            <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-4">Christer Teglund</h2>
-              <p className="text-neutral-400 text-lg italic">"Min vision är att göra lärandet lustfyllt och meningsfullt. Att sitta bakom trumsetet ska kännas roligt från första stund."</p>
-              <div className="mt-8 pt-8 border-t border-white/10 flex items-center gap-4">
-                <div className="w-12 h-12 bg-brand rounded-full" />
-                <div>
-                  <div className="font-bold">Christer Teglund</div>
-                  <div className="text-sm text-neutral-500">Författare & Trumlärare</div>
-                </div>
-              </div>
+        <div className="flex flex-col md:flex-row gap-16 items-start">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="w-full md:w-1/2 lg:w-2/5 shrink-0"
+          >
+            <div className="rounded-[2.5rem] overflow-hidden shadow-2xl shadow-brand/10 border-8 border-white bg-neutral-100 aspect-[4/5] relative">
+              <img 
+                src="input_file_0.png" 
+                alt="Christer Teglund" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
             </div>
-            <Drum size={200} className="absolute -bottom-20 -right-20 text-white/5 rotate-12" />
-          </section>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex-1 space-y-8 py-4"
+          >
+            <div className="prose prose-neutral prose-xl max-w-none">
+              <p className="font-bold text-neutral-900 leading-tight">
+                Christer Teglund är legitimerad musiklärare och har undervisat i trummor i över 25 år. 
+              </p>
+              <p className="text-neutral-600 leading-relaxed">
+                Han har arbetat på kulturskolor, gymnasieskolor och musikhögskolor. Christer är författare till den populära serien Trumboken som idag används av tusentals elever runt om i Sverige.
+              </p>
+              <p className="text-neutral-600 leading-relaxed font-medium italic border-l-4 border-brand pl-6 py-2">
+                "Min vision är att göra lärandet lustfyllt och meningsfullt. Att sitta bakom trumsetet ska kännas roligt från första stund."
+              </p>
+              <p className="text-neutral-600 leading-relaxed">
+                Vid sidan om sitt författarskap och läraryrke är Christer aktiv som musiker i olika sammanhang. Trumboken föddes ur en önskan att skapa ett material som är både pedagogiskt genomtänkt och samtidigt modernt och inspirerande för dagens elever.
+              </p>
+            </div>
+
+            <div className="pt-4 flex flex-wrap gap-4">
+              <a href="https://instagram.com/trumboken.se" target="_blank" rel="noopener noreferrer" className="p-5 rounded-2xl bg-neutral-50 text-neutral-600 hover:bg-brand hover:text-white transition-all hover:scale-110">
+                <Instagram size={28} />
+              </a>
+              <a href="https://facebook.com/trumboken" target="_blank" rel="noopener noreferrer" className="p-5 rounded-2xl bg-neutral-50 text-neutral-600 hover:bg-brand hover:text-white transition-all hover:scale-110">
+                <Facebook size={28} />
+              </a>
+              <a href="https://www.youtube.com/channel/UChAgRttWFgVc2UcbJQnd7Cw" target="_blank" rel="noopener noreferrer" className="p-5 rounded-2xl bg-neutral-50 text-neutral-600 hover:bg-brand hover:text-white transition-all hover:scale-110">
+                <Youtube size={28} />
+              </a>
+              <a href="mailto:info@trumboken.se" className="p-5 rounded-2xl bg-neutral-50 text-neutral-600 hover:bg-brand hover:text-white transition-all hover:scale-110">
+                <Mail size={28} />
+              </a>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>
   );
 }
+

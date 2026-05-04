@@ -15,9 +15,10 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Hem", path: "/" },
-    { name: "Spelböcker", path: "/bocker" },
-    { name: "Om Trumboken", path: "/om-trumboken" },
+    { name: "Trumtips", path: "/trumtips" },
+    { name: "Nybörjarguide", path: "/nyborjarguide" },
+    { name: "Lärarsida", path: "/lararsida" },
+    { name: "Författaren", path: "/om-trumboken" },
     { name: "Kontakt", path: "/kontakt" },
   ];
 
@@ -30,7 +31,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="group">
-            <span className={`font-display text-2xl font-black italic tracking-tighter ${scrolled ? "text-neutral-900" : "text-neutral-900"}`}>
+            <span className={`font-display text-2xl lg:text-4xl md:text-3xl font-black italic tracking-tighter ${scrolled ? "text-neutral-900" : "text-neutral-900"}`}>
               TRUMBOKEN
             </span>
           </Link>

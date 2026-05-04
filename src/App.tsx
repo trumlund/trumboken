@@ -6,6 +6,9 @@ import Books from "./pages/Books";
 import BookDetail from "./pages/BookDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Trumtips from "./pages/Trumtips";
+import Nyborguide from "./pages/Nyborguide";
+import Lararsida from "./pages/Lararsida";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -40,6 +43,9 @@ export default function App() {
             <Route path="/bocker/:id" element={<BookDetail />} />
             <Route path="/om-trumboken" element={<About />} />
             <Route path="/kontakt" element={<Contact />} />
+            <Route path="/trumtips" element={<Trumtips />} />
+            <Route path="/nyborjarguide" element={<Nyborguide />} />
+            <Route path="/lararsida" element={<Lararsida />} />
           </Routes>
         </main>
         <Footer />
