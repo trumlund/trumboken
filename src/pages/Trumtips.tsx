@@ -116,7 +116,7 @@ export default function Trumtips() {
             to="/kontakt"
             className="inline-block bg-white text-brand px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-xl transition-all"
           >
-            Kontakta oss
+            KONTAKT
           </Link>
         </section>
       </div>

@@ -60,7 +60,7 @@ export default function About() {
               <a href="https://www.youtube.com/channel/UChAgRttWFgVc2UcbJQnd7Cw" target="_blank" rel="noopener noreferrer" className="p-5 rounded-2xl bg-neutral-50 text-neutral-600 hover:bg-brand hover:text-white transition-all hover:scale-110">
                 <Youtube size={28} />
               </a>
-              <a href="mailto:info@trumboken.se" className="p-5 rounded-2xl bg-neutral-50 text-neutral-600 hover:bg-brand hover:text-white transition-all hover:scale-110">
+              <a href="mailto:info@chreator.se" className="p-5 rounded-2xl bg-neutral-50 text-neutral-600 hover:bg-brand hover:text-white transition-all hover:scale-110">
                 <Mail size={28} />
               </a>
             </div>

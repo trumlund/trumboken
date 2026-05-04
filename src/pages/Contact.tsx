@@ -6,7 +6,7 @@ export default function Contact() {
     <div className="pt-32 pb-24 px-4 bg-neutral-50 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <header className="text-center mb-20">
-          <h1 className="text-5xl font-bold mb-6">Kontakta oss</h1>
+          <h1 className="text-5xl font-bold mb-6">KONTAKT</h1>
           <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
             Har du frågor om våra böcker, söker du samarbeten eller vill du bara 
             veta mer om Trumboken? Vi hörs gärna!
@@ -22,7 +22,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-bold mb-1">E-post</h4>
-                <p className="text-neutral-500 text-sm">info@trumboken.se</p>
+                <p className="text-neutral-500 text-sm">info@chreator.se</p>
               </div>
             </div>
             

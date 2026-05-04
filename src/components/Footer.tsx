@@ -22,7 +22,7 @@ export default function Footer() {
             <a href="#" className="hover:text-brand transition-colors">
               <Facebook size={20} />
             </a>
-            <a href="mailto:info@trumboken.se" className="hover:text-brand transition-colors">
+            <a href="mailto:info@chreator.se" className="hover:text-brand transition-colors">
               <Mail size={20} />
             </a>
           </div>

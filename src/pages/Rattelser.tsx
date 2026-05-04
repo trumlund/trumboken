@@ -71,12 +71,9 @@ const Rattelser = () => {
               <AlertCircle size={28} />
             </div>
             <h1 className="text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight italic uppercase">
-              Rättelser <span className="text-brand">& Updgates</span>
+              Rättelser
             </h1>
           </div>
-          <p className="text-xl text-neutral-600 font-medium">
-            Här listar vi kända felaktigheter och större uppdateringar mellan olika upplagor av Trumboken.
-          </p>
         </header>
 
         <div className="space-y-8">
@@ -125,10 +122,10 @@ const Rattelser = () => {
             Vi jobbar ständigt med att förbättra böckerna. Om du hittar något som verkar tokigt får du gärna höra av dig på Facebook eller mail.
           </p>
           <a
-            href="mailto:info@trumboken.se"
+            href="mailto:info@chreator.se"
             className="inline-flex h-14 items-center justify-center px-10 rounded-2xl bg-brand text-white font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-lg shadow-brand/25 uppercase italic"
           >
-            Kontakta oss
+            KONTAKT
           </a>
         </div>
       </div>
