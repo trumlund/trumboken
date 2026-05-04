@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import Trumtips from "./pages/Trumtips";
 import Nyborguide from "./pages/Nyborguide";
 import Lararsida from "./pages/Lararsida";
+import Rattelser from "./pages/Rattelser";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -46,6 +47,7 @@ export default function App() {
             <Route path="/trumtips" element={<Trumtips />} />
             <Route path="/nyborjarguide" element={<Nyborguide />} />
             <Route path="/lararsida" element={<Lararsida />} />
+            <Route path="/rattelser" element={<Rattelser />} />
           </Routes>
         </main>
         <Footer />

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Music, Headphones, Award, FileWarning, ExternalLink, Mail, Layout } from "lucide-react";
 
@@ -33,9 +34,9 @@ export default function Lararsida() {
       description: "Här kan du ladda ner diplom till dina elever när de spelat klart böckerna genom att klicka på bilderna nedan.",
       icon: Award,
       images: [
-        { img: "input_file_0.png", url: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB1.pdf" },
-        { img: "input_file_1.png", url: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB2.pdf" },
-        { img: "input_file_2.png", url: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB3.pdf" }
+        { img: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB1-thumb-768x1013.jpg", url: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB1.pdf" },
+        { img: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB2-thumb-768x1013.jpg", url: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB2.pdf" },
+        { img: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB3-thumb-768x1013.jpg", url: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB3.pdf" }
       ],
       items: []
     },
@@ -45,7 +46,7 @@ export default function Lararsida() {
       description: "I del 1 (upplaga 1 & 2) och del 2 (upplaga 1) har några små fel smugit sig in. Här hittar du rättelserna.",
       icon: FileWarning,
       items: [
-        { name: "Rättelser del 1 & 2", url: "#" }
+        { name: "Läs alla rättelser & uppdateringar", url: "/rattelser", isInternal: true }
       ]
     }
   ];
@@ -119,23 +120,41 @@ export default function Lararsida() {
 
                   <div className="space-y-3">
                     {section.items.map((item, idx) => (
-                      <a
-                        key={idx}
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex flex-col p-4 rounded-xl bg-white border border-neutral-200 text-neutral-900 hover:border-brand hover:text-brand transition-all group/item"
-                      >
-                        <div className="flex items-center justify-between font-bold">
-                          {item.name}
-                          <ExternalLink size={18} className="opacity-30 group-hover/item:opacity-100 shrink-0" />
-                        </div>
-                        {item.description && (
-                          <div className="text-sm font-medium text-neutral-500 mt-1 line-clamp-2">
-                            {item.description}
+                      item.isInternal ? (
+                        <Link
+                          key={idx}
+                          to={item.url}
+                          className="flex flex-col p-4 rounded-xl bg-white border border-neutral-200 text-neutral-900 hover:border-brand hover:text-brand transition-all group/item"
+                        >
+                          <div className="flex items-center justify-between font-bold">
+                            {item.name}
+                            <ExternalLink size={18} className="opacity-30 group-hover/item:opacity-100 shrink-0" />
                           </div>
-                        )}
-                      </a>
+                          {item.description && (
+                            <div className="text-sm font-medium text-neutral-500 mt-1 line-clamp-2">
+                              {item.description}
+                            </div>
+                          )}
+                        </Link>
+                      ) : (
+                        <a
+                          key={idx}
+                          href={item.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex flex-col p-4 rounded-xl bg-white border border-neutral-200 text-neutral-900 hover:border-brand hover:text-brand transition-all group/item"
+                        >
+                          <div className="flex items-center justify-between font-bold">
+                            {item.name}
+                            <ExternalLink size={18} className="opacity-30 group-hover/item:opacity-100 shrink-0" />
+                          </div>
+                          {item.description && (
+                            <div className="text-sm font-medium text-neutral-500 mt-1 line-clamp-2">
+                              {item.description}
+                            </div>
+                          )}
+                        </a>
+                      )
                     ))}
                   </div>
                 </div>
