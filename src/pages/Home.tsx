@@ -81,38 +81,48 @@ export default function Home() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-neutral-50 px-4 py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="relative overflow-hidden px-4 py-24 lg:py-40 min-h-[90vh] flex items-center">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://trumboken.se/wp-content/uploads/2026/05/ChatGPT-Image-8-maj-2026-14_44_29.png" 
+            alt="Hero Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-neutral-950/70 backdrop-blur-[2px]" />
+        </div>
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-bold uppercase tracking-wider mb-6">
-              <Drum size={14} /> Sveriges enda multimodala trumbokserie
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/30 border border-brand/50 text-white text-xs font-bold uppercase tracking-wider mb-8 backdrop-blur-md">
+              <Drum size={14} className="text-brand" /> Sveriges enda multimodala trumbokserie
             </div>
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-[1.1] text-neutral-900">
-              Lär dig spela trumset
+            <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-[0.9] text-white italic uppercase tracking-tighter">
+              Lär dig spela <span className="text-brand">trumset</span>
             </h1>
-            <p className="text-xl font-bold text-neutral-900 mb-2">
+            <p className="text-2xl font-black text-white mb-4 uppercase italic tracking-tight">
               Enkelt, roligt och snabbt!
             </p>
-            <p className="text-lg text-neutral-600 mb-8 max-w-lg leading-relaxed">
+            <p className="text-xl text-neutral-200 mb-10 max-w-lg leading-relaxed font-medium">
               Trumboken är en metodisk och stimulerande bokserie som tar dig 
               hela vägen från de första slagen till avancerat spel.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-6">
               <Link
                 to="/bocker"
-                className="bg-brand text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-brand-dark transition-all shadow-xl shadow-brand/20 flex items-center gap-2"
+                className="bg-brand text-white px-10 py-5 rounded-2xl font-black italic uppercase text-lg hover:bg-brand-dark transition-all shadow-2xl shadow-brand/40 flex items-center gap-3 transform hover:-translate-y-1 active:scale-95"
               >
-                Se alla böcker <ChevronRight size={20} />
+                Se alla böcker <ChevronRight size={22} />
               </Link>
               <a
                 href="#video"
-                className="bg-white text-neutral-900 border border-neutral-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-neutral-100 transition-all flex items-center gap-2"
+                className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-black italic uppercase text-lg hover:bg-white/20 transition-all flex items-center gap-3 active:scale-95"
               >
-                <Play size={20} className="text-brand fill-brand" /> Se introduktion
+                <Play size={22} className="text-brand fill-brand" /> Se introduktion
               </a>
             </div>
           </motion.div>
@@ -122,11 +132,11 @@ export default function Home() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             id="video"
-            className="bg-white p-4 rounded-3xl shadow-2xl shadow-neutral-200"
+            className="bg-white/5 backdrop-blur-sm p-4 rounded-[2.5rem] border border-white/10 shadow-2xl"
           >
-            <div className="video-container rounded-2xl overflow-hidden shadow-inner bg-neutral-900 relative group">
+            <div className="video-container rounded-[2rem] overflow-hidden shadow-inner bg-black relative group">
               <iframe
-                src={`https://www.youtube.com/embed/nvU2AWSQ0iI?autoplay=1&mute=${isMuted ? 1 : 0}&controls=0&loop=1&playlist=nvU2AWSQ0iI&rel=0`}
+                src={`https://www.youtube.com/embed/nvU2AWSQ0iI?autoplay=1&mute=${isMuted ? 1 : 0}&controls=1&loop=1&playlist=nvU2AWSQ0iI&rel=0`}
                 title="Trumboken Introduktion"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -134,7 +144,7 @@ export default function Home() {
               
               <button 
                 onClick={() => setIsMuted(!isMuted)}
-                className="absolute bottom-4 right-4 bg-black/40 backdrop-blur-md p-3 rounded-full text-white opacity-80 hover:opacity-100 transition-all hover:scale-110 z-10"
+                className="absolute top-4 right-4 bg-black/60 backdrop-blur-md p-3 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all hover:scale-110 z-20"
               >
                 {isMuted ? (
                   <Volume2 size={24} className="opacity-50" />
@@ -277,33 +287,24 @@ export default function Home() {
       {/* PDF / DFlip Preview replacement section */}
       <section className="py-24 px-4 bg-neutral-900 text-white overflow-hidden relative">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/20 text-brand text-xs font-bold uppercase tracking-wider mb-6">
-                Prova på gratis
-              </div>
-              <h2 className="text-4xl font-bold mb-6">Bläddra i Trumboken del 1</h2>
-              <p className="text-neutral-400 mb-8 leading-relaxed">
-                Ta en tjuvtitt! Här ser du några sidor ur boken.
-              </p>
-              
-              <div className="bg-neutral-800/50 p-6 rounded-2xl border border-neutral-700 mb-8">
-                <p className="text-sm text-neutral-300 leading-relaxed italic">
-                  <span className="text-brand font-bold not-italic">OBS!</span> Förhandsvisningen visar inte ett exakt exemplar av Trumboken. Böckerna har spiralbindning (wire-o) och blir därför enkla att bläddra i och ha på ett notställ!
-                </p>
-              </div>
-
-              <button 
-                onClick={() => document.getElementById('pdf-viewer')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-brand text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-dark transition-all flex items-center gap-2"
-              >
-                <BookOpen size={20} /> Öppna interaktiv preview
-              </button>
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/20 text-brand text-xs font-bold uppercase tracking-wider mb-6">
+              Prova på gratis
             </div>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 italic uppercase tracking-tighter">Bläddra i Trumboken del 1</h2>
+            <p className="text-neutral-400 mb-8 leading-relaxed text-lg">
+              Ta en tjuvtitt! Här kan du bläddra direkt i boken och se hur den ser ut inuti.
+            </p>
             
-            <div id="pdf-viewer" className="relative h-[500px]">
-              <PDFViewer />
+            <div className="bg-neutral-800/50 p-4 rounded-xl border border-neutral-700 inline-block">
+              <p className="text-xs text-neutral-400 leading-relaxed italic">
+                <span className="text-brand font-bold not-italic">TIPS!</span> Böckerna har spiralbindning (wire-o) och blir därför enkla att ha på ett notställ!
+              </p>
             </div>
+          </div>
+          
+          <div id="pdf-viewer" className="mt-8">
+            <PDFViewer />
           </div>
         </div>
       </section>

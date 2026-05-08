@@ -11,7 +11,7 @@ export default function Lararsida() {
       id: "spellistor",
       title: "SPELLISTOR",
       description: "Här hittar du alla spellistor till böckerna. Både Spotify och YouTube!",
-      icon: Circle play,
+      icon: Music,
       items: [
         { 
           name: "Alla Spotify-listor i böckerna!", 
@@ -120,7 +120,7 @@ export default function Lararsida() {
     },
     {
       id: "rytmik",
-      title: "RYTMIK",
+      title: "I ARBETET MED \"MUSIKENS ELEMENT\"",
       description: "Något som verkligen har kompletterat min undervisning är kurser i rytmik. De ökade mitt intresse i att söka och dela ny metodik (aktiviteter) kring hur vi kan utforska musiklära/musikens olika element (puls, tempo, tonhöjd, osv.) på mer lekfulla sätt bl.a genom att vi gestaltar det vi hör och upplever i musiken.\n\nSärskilt lekar där vi jobbar mer grovmotoriskt verkar underlätta för många yngre att uppfatta det abstrakta med musik.\n\nEtt annat tips är också att pryda väggarna i lektionssalen med musiklära, lekar och inspiration som lockar till elevernas egna engagemang, fantasi, fridans, fokuserad lyssning…",
       icon: Waves,
       isFullWidth: true,
@@ -131,13 +131,9 @@ export default function Lararsida() {
       ],
       subsections: [
         {
-          title: "I ARBETET MED \"MUSIKENS ELEMENT\"",
-          items: []
-        },
-        {
           title: "HITTA PULSEN",
           items: [
-            "Vi ”stampar takten” till en låt, vad har vi hittat i foten?",
+            "Vi ”stampar takten” till en låt, vad har we hittat i foten?",
             "Skicka klappen – vi låter en klapp skickas runt i cirkel i ett bestämt tempo eller till en låt. Extraregel: vi får fritt skicka klappen tydligt åt andra hållet för att byta riktning när som.",
             "Klappa pulsen löst på elevens rygg eller axel (i en låt).",
             "”Sambatåg” – Gå runt i led till pulsstark musik i normalt gångtempo, alla klappar pulsen på axlarna på personen framför. Vi uppfattar då pulsen starkare genom känseln. Låtexempel: Pappas samba II.",
@@ -172,7 +168,8 @@ export default function Lararsida() {
       content: [
         {
           subtitle: "Tips 1: Förebildstavla",
-          text: "Gör en förebildstavla med stilbildande/inspirerande trummisar (eller slagverkare) till lektionssalen som kan locka till frågor om vilka de är osv. Ge elever i hemläxa att välja ut ett Youtube-klipp/trumsolo som de gillar med en viss trummis."
+          text: "Gör en förebildstavla med stilbildande/inspirerande trummisar (eller slagverkare) till lektionssalen som kan locka till frågor om vilka de är osv. Ge elever i hemläxa att välja ut ett Youtube-klipp/trumsolo som de gillar med en viss trummis.\n\nEtt exempel på en tavla som en av mina elever gjorde till sitt rum:",
+          image: "https://trumboken.se/wp-content/uploads/2020/04/90603642_1681584081997367_1908201948968910848_n.jpg"
         },
         {
           subtitle: "Tips 2: Elevförebilder",
@@ -180,32 +177,9 @@ export default function Lararsida() {
         },
         {
           subtitle: "Tips 3: Yrken inom musik",
-          text: "Lista olika yrken inom musik/slagverk (t.ex som en video, lista på tavlan ihop med eleverna), även yrken som inte är utövande men som är relaterade till musik, t.ex STIM, Polar prize, återförsäljare/agent.",
-          items: [
-            { name: "Se video: Yrken inom musik (YouTube)", url: "https://www.youtube.com/watch?v=FqS_I0z2-Rk" }
-          ]
+          text: "Lista olika yrken inom musik/slagverk (t.ex som en video, lista på tavlan ihop med eleverna), även yrken som inte är utövande men som är relaterade till musik, t.ex STIM, Polar prize, återförsäljare/agent. Ett perfekt moment på t.ex temastunder/”slagverkslördag” när ni samlas i medelstora grupper.\n\nHär är en YOUTUBE-video (fritt att använda i utbildningssyfte inom skolans väggar):",
+          youtubeId: "5l8-c04YuPA"
         }
-      ]
-    },
-    {
-      id: "youtube-lankar",
-      title: "YOUTUBE-LÄNKAR",
-      description: "Lite blandad historia och inspiration.",
-      icon: Youtube,
-      isFullWidth: true,
-      items: [
-        { name: "Litofoner av stenar", url: "https://www.youtube.com/watch?v=1F_4S7G8T0U" },
-        { name: "Världens 10 äldsta kända instrument", url: "https://www.youtube.com/watch?v=F07lToH7Kms" },
-        { name: "No movement without rhythm – afrikansk by i Guinea", url: "https://www.youtube.com/watch?v=Gqy6X8P7_7E" },
-        { name: "Nyabinghi (Burru) trumspel (stor influens till ska/reggae)", url: "https://www.youtube.com/watch?v=mHnFQUQY8K4" },
-        { name: "The History of Jazz Drums", url: "https://www.youtube.com/watch?v=68_9v0q50pI" },
-        { name: "Early Jazz Drumming History", url: "https://www.youtube.com/watch?v=9_pY4oVvG-Y" },
-        { name: "Evolution of the Drumset (i Modern Drummer)", url: "https://www.youtube.com/watch?v=UqN9N2W7S6c" },
-        { name: "Buddy Rich dokumentär", url: "https://www.youtube.com/watch?v=9E4SIsZ7y9w" },
-        { name: "John Bonham Documentary", url: "https://www.youtube.com/watch?v=6O_I922Z7M0" },
-        { name: "When British rock drumming ruled", url: "https://www.youtube.com/watch?v=7X9B8_tXpU8" },
-        { name: "Most Used Drum Breaks", url: "https://www.youtube.com/watch?v=5Sa6f6Q8sF8" },
-        { name: "The World’s Most Sampled Drummer", url: "https://www.youtube.com/watch?v=ZIKv92c733M" }
       ]
     }
   ];
@@ -221,8 +195,9 @@ export default function Lararsida() {
             Lärarsida
           </h1>
           <p className="text-xl text-neutral-600 leading-relaxed max-w-3xl mx-auto font-medium">
-            Här finns allt från spellistor och övningslåtar till 
-            pedagogiska idéer för din trumundervisning. Ladda ner material gratis till dina lektioner.
+            Välkommen till din resursbank! Här har vi samlat allt från spellistor och övningslåtar till 
+            pedagogiska idéer, rytmikövningar och inspiration för din trumundervisning. 
+            Ladda ner diplom, trumnycklar och tavelnoter direkt till dina lektioner.
           </p>
         </header>
 
@@ -401,7 +376,29 @@ export default function Lararsida() {
                       {(section as any).content.map((tip: any, idx: number) => (
                         <div key={idx} className="bg-white/50 rounded-3xl p-8 border border-neutral-100">
                           <h3 className="text-xl font-black italic mb-4 text-neutral-900 uppercase">{tip.subtitle}</h3>
-                          <p className="text-neutral-600 font-medium leading-relaxed mb-6">{tip.text || tip.description}</p>
+                          <p className="text-neutral-600 font-medium leading-relaxed mb-6 whitespace-pre-line">{tip.text || tip.description}</p>
+                          {tip.image && (
+                            <div className="mb-6 max-w-lg rounded-2xl overflow-hidden border border-neutral-100 bg-white p-2">
+                              <img 
+                                src={tip.image} 
+                                alt={tip.subtitle} 
+                                className="w-full h-auto object-contain"
+                                referrerPolicy="no-referrer"
+                              />
+                            </div>
+                          )}
+                          {tip.youtubeId && (
+                            <div className="mb-6 max-w-2xl aspect-video rounded-2xl overflow-hidden border border-neutral-100 bg-black shadow-lg">
+                              <iframe
+                                src={`https://www.youtube.com/embed/${tip.youtubeId}`}
+                                title="YouTube video player"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowFullScreen
+                                className="w-full h-full"
+                              ></iframe>
+                            </div>
+                          )}
                           <div className="space-y-4">
                             {tip.items?.map((item: any, i: number) => (
                               <a 
@@ -430,14 +427,14 @@ export default function Lararsida() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="p-12 rounded-[3rem] bg-neutral-900 text-white relative overflow-hidden text-center"
+          className="p-12 rounded-[3rem] bg-neutral-50 border border-neutral-200 text-neutral-900 relative overflow-hidden text-center"
         >
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(circle_at_top_right,var(--color-brand),transparent)] pointer-events-none" />
+          <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-[radial-gradient(circle_at_top_right,var(--color-brand),transparent)] pointer-events-none" />
           <div className="relative z-10 max-w-2xl mx-auto">
             <Mail className="mx-auto mb-6 text-brand" size={48} />
             <h2 className="text-3xl font-black italic mb-6 uppercase">Frågor eller feedback?</h2>
-            <p className="text-neutral-400 mb-10 text-lg">
-              Har du förslag på material som saknas eller vill du veta mer om hur andra lärare jobbar med serien? Vi vill gärna höra från dig!
+            <p className="text-neutral-600 mb-10 text-lg font-medium leading-relaxed">
+              Har du förslag på material som saknas eller vill du veta mer om hur andra jobbar med böckerna? Hör av dig!
             </p>
             <a 
               href="mailto:info@chreator.se"

@@ -1,124 +1,115 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight, Maximize2, Download } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { useState, useRef, forwardRef } from "react";
+import { ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
+import HTMLFlipBook from "react-pageflip";
 
-interface PDFViewerProps {
-  pdfUrl?: string;
+interface PageProps {
+  image: string;
+  number: number;
 }
 
-export default function PDFViewer({ pdfUrl }: PDFViewerProps) {
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 5; // Placeholder
+const Page = forwardRef<HTMLDivElement, PageProps>((props, ref) => {
+  return (
+    <div className="bg-white shadow-lg overflow-hidden h-full" ref={ref}>
+      <img 
+        src={props.image} 
+        alt={`Sida ${props.number}`} 
+        className="w-full h-full object-contain bg-white"
+        loading="lazy"
+      />
+    </div>
+  );
+});
 
-  const nextPage = () => setCurrentPage((p) => Math.min(p + 1, totalPages));
-  const prevPage = () => setCurrentPage((p) => Math.max(p - 1, 1));
+export default function PDFViewer() {
+  const [currentPage, setCurrentPage] = useState(0);
+  const bookRef = useRef<any>(null);
+  const totalPages = 20;
+
+  const images = Array.from({ length: totalPages }, (_, i) => {
+    const num = i + 1;
+    const ext = num === 1 ? 'png' : 'jpg';
+    return `https://trumboken.se/wp-content/uploads/2026/05/${num}.${ext}`;
+  });
+
+  const onPage = (e: any) => {
+    setCurrentPage(e.data);
+  };
 
   return (
-    <div className="bg-neutral-800 rounded-2xl overflow-hidden shadow-2xl border border-neutral-700 flex flex-col h-full">
+    <div className="bg-neutral-800 rounded-2xl overflow-hidden shadow-2xl border border-neutral-700 flex flex-col h-[700px] w-full max-w-5xl mx-auto">
       {/* Toolbar */}
-      <div className="bg-neutral-900 px-4 py-3 flex justify-between items-center border-b border-neutral-700">
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-1">
+      <div className="bg-neutral-900 px-6 py-4 flex justify-between items-center border-b border-neutral-700 z-20">
+        <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3">
             <button 
-              onClick={prevPage}
-              disabled={currentPage === 1}
-              className="p-1 hover:bg-neutral-700 rounded disabled:opacity-30 transition-colors"
+              onClick={() => bookRef.current.pageFlip().flipPrev()}
+              disabled={currentPage === 0}
+              className="p-2 hover:bg-neutral-700 rounded-lg disabled:opacity-30 transition-all text-white border border-neutral-700"
             >
-              <ChevronLeft size={20} className="text-white" />
+              <ChevronLeft size={20} />
             </button>
-            <span className="text-xs text-neutral-400 font-mono">
-              {currentPage} / {totalPages}
+            <span className="text-sm text-neutral-400 font-mono min-w-[60px] text-center">
+              Sida {currentPage + 1} / {totalPages}
             </span>
             <button 
-              onClick={nextPage}
-              disabled={currentPage === totalPages}
-              className="p-1 hover:bg-neutral-700 rounded disabled:opacity-30 transition-colors"
+              onClick={() => bookRef.current.pageFlip().flipNext()}
+              disabled={currentPage >= totalPages - 1}
+              className="p-2 hover:bg-neutral-700 rounded-lg disabled:opacity-30 transition-all text-white border border-neutral-700"
             >
-              <ChevronRight size={20} className="text-white" />
+              <ChevronRight size={20} />
             </button>
           </div>
         </div>
         
-        <div className="flex items-center gap-3">
-          <button className="p-1.5 hover:bg-neutral-700 rounded text-neutral-400 hover:text-white transition-colors">
+        <div className="hidden sm:flex items-center gap-3">
+          <button className="p-2 hover:bg-neutral-700 rounded-lg text-neutral-400 hover:text-white transition-colors border border-neutral-700">
             <Maximize2 size={18} />
-          </button>
-          <button className="p-1.5 hover:bg-neutral-700 rounded text-neutral-400 hover:text-white transition-colors">
-            <Download size={18} />
           </button>
         </div>
       </div>
 
       {/* Pages Container */}
-      <div className="flex-grow p-4 md:p-8 flex items-center justify-center relative overflow-hidden bg-neutral-850">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentPage}
-            initial={{ opacity: 0, rotateY: 45, x: 50 }}
-            animate={{ opacity: 1, rotateY: 0, x: 0 }}
-            exit={{ opacity: 0, rotateY: -45, x: -50 }}
-            transition={{ duration: 0.4, type: "spring", stiffness: 100 }}
-            className="w-full max-w-sm aspect-[3/4] bg-white rounded shadow-2xl relative preserve-3d"
-            style={{ transformStyle: "preserve-3d" }}
+      <div className="flex-grow flex items-center justify-center bg-neutral-900 p-4 md:p-8 overflow-hidden">
+        <div className="flipbook-wrapper scale-90 sm:scale-100 transition-transform origin-center">
+          {/* @ts-ignore */}
+          <HTMLFlipBook 
+            width={450} 
+            height={636}
+            size="stretch"
+            minWidth={315}
+            maxWidth={1000}
+            minHeight={400}
+            maxHeight={1533}
+            maxShadowOpacity={0.5}
+            showCover={true}
+            mobileScrollSupport={true}
+            onFlip={onPage}
+            ref={bookRef}
+            className="shadow-2xl"
+            style={{ margin: '0 auto' }}
+            startPage={0}
+            drawShadow={true}
+            flippingTime={1000}
+            usePortrait={false}
+            startZIndex={0}
+            autoSize={true}
+            clickEventForward={true}
+            useMouseEvents={true}
+            swipeDistance={30}
+            showPageCorners={true}
+            disableFlipByClick={false}
           >
-            {/* Mock Page Content */}
-            <div className="p-8 h-full flex flex-col">
-              <div className="w-12 h-12 bg-brand/10 rounded-full flex items-center justify-center mb-6">
-                <Drum className="text-brand" size={24} />
-              </div>
-              <div className="space-y-4">
-                <div className="h-6 bg-neutral-100 rounded w-3/4" />
-                <div className="h-4 bg-neutral-50 rounded w-full" />
-                <div className="h-4 bg-neutral-50 rounded w-5/6" />
-                <div className="h-4 bg-neutral-50 rounded w-4/6" />
-              </div>
-              
-              <div className="mt-12 space-y-2">
-                <div className="h-1 bg-neutral-200 rounded w-full" />
-                <div className="h-1 bg-neutral-200 rounded w-full" />
-                <div className="h-1 bg-neutral-100 rounded w-1/2" />
-              </div>
-
-              {/* Music notation placeholders */}
-              <div className="mt-auto grid grid-cols-4 gap-2">
-                {[...Array(8)].map((_, i) => (
-                  <div key={i} className="h-8 bg-neutral-100 rounded" />
-                ))}
-              </div>
-              
-              <div className="absolute bottom-4 right-4 text-[10px] text-neutral-300 font-mono">
-                TRUMBOKEN PG. {currentPage}
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-        
-        {/* Shadow Overlay */}
-        <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_100px_rgba(0,0,0,0.5)]" />
+            {images.map((img, i) => (
+              <Page key={i} image={img} number={i + 1} />
+            ))}
+          </HTMLFlipBook>
+        </div>
       </div>
       
-      <div className="p-4 bg-neutral-900/50 text-[10px] text-center text-neutral-500 uppercase tracking-widest font-bold">
-        Interaktiv Förhandstitt
+      <div className="p-4 bg-neutral-950 text-[10px] text-center text-neutral-500 uppercase tracking-[0.2em] font-black italic">
+        Klicka i hörnen eller dra för att bläddra
       </div>
     </div>
   );
 }
 
-function Drum(props: any) {
-  return (
-    <svg 
-      {...props}
-      xmlns="http://www.w3.org/2000/svg" 
-      width="24" 
-      height="24" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round" 
-    >
-      <path d="m2 2 20 20"/><path d="m22 2-20 20"/><circle cx="12" cy="12" r="10"/><path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"/>
-    </svg>
-  );
-}

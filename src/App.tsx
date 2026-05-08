@@ -10,6 +10,7 @@ import Trumtips from "./pages/Trumtips";
 import Nyborguide from "./pages/Nyborguide";
 import Lararsida from "./pages/Lararsida";
 import Rattelser from "./pages/Rattelser";
+import Kopvillkor from "./pages/Kopvillkor";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -48,6 +49,7 @@ export default function App() {
             <Route path="/nyborjarguide" element={<Nyborguide />} />
             <Route path="/lararsida" element={<Lararsida />} />
             <Route path="/rattelser" element={<Rattelser />} />
+            <Route path="/kopvillkor" element={<Kopvillkor />} />
           </Routes>
         </main>
         <Footer />
