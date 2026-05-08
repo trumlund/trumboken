@@ -27,8 +27,8 @@ export default function PDFViewer() {
 
   const images = Array.from({ length: totalPages }, (_, i) => {
     const num = i + 1;
-    const ext = num === 1 ? 'png' : 'jpg';
-    return `https://trumboken.se/wp-content/uploads/2026/05/${num}.${ext}`;
+    if (num === 1) return "https://trumboken.se/wp-content/uploads/2021/09/TB1-fram.jpg";
+    return `https://trumboken.se/wp-content/uploads/2026/05/${num}.jpg`;
   });
 
   const onPage = (e: any) => {
