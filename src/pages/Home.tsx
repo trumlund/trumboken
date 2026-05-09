@@ -183,7 +183,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
-              <h2 className="text-4xl font-bold mb-4">Utforska bokserien</h2>
+              <h2 className="text-4xl font-bold mb-4">Vilken bok passar dig bäst?</h2>
               <p className="text-neutral-600 max-w-xl">
                 Varje bok är noggrant utformad för att ge dig rätt verktyg vid rätt tillfälle. 
                 Från de första takterna till avancerade polyrytmer.
