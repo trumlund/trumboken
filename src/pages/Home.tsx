@@ -109,12 +109,12 @@ export default function Home() {
               hela vägen från de första slagen till avancerat spel.
             </p>
             <div className="flex flex-wrap gap-6">
-              <Link
-                to="/bocker"
+              <a
+                href="#valj-bok"
                 className="bg-brand text-white px-10 py-5 rounded-2xl font-black italic uppercase text-lg hover:bg-brand-dark transition-all shadow-2xl shadow-brand/40 flex items-center gap-3 transform hover:-translate-y-1 active:scale-95"
               >
                 LÄS MER <ChevronRight size={22} />
-              </Link>
+              </a>
             </div>
           </motion.div>
 
@@ -179,7 +179,7 @@ export default function Home() {
       </section>
 
       {/* Featured Books */}
-      <section className="py-24 px-4 bg-neutral-50">
+      <section id="valj-bok" className="py-24 px-4 bg-neutral-50">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
@@ -287,9 +287,9 @@ export default function Home() {
               Ta en tjuvtitt! Här kan du bläddra direkt i boken och se hur den ser ut inuti.
             </p>
             
-            <div className="bg-neutral-800/50 p-4 rounded-xl border border-neutral-700 inline-block">
-              <p className="text-xs text-neutral-400 leading-relaxed italic">
-                <span className="text-brand font-bold not-italic">TIPS!</span> Böckerna har spiralbindning (wire-o) och blir därför enkla att ha på ett notställ!
+            <div className="bg-neutral-800/50 p-6 rounded-xl border border-neutral-700 inline-block">
+              <p className="text-sm text-neutral-400 leading-relaxed italic">
+                <span className="text-brand font-bold not-italic">OBS!</span> Böckerna har spiralbindning (wire-o) och blir därför enkla att ha på ett notställ!
               </p>
             </div>
           </div>
@@ -304,19 +304,18 @@ export default function Home() {
       <section id="aterforsaljare" className="py-24 px-4 bg-white border-y border-neutral-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Här kan du köpa Trumboken</h2>
+            <h2 className="text-4xl font-bold mb-4">Butiker</h2>
             <p className="text-neutral-600 max-w-2xl mx-auto">
-              Trumboken finns hos de flesta välsorterade musikaffärer och bokhandlare på nätet. 
-              Välj din favoritbutik nedan för att se aktuella priser och lagerstatus.
+              Köp Trumboken i din lokala musikaffär eller på nätet.
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { name: "Notposten", url: "https://notposten.se/search?q=trumboken" },
-              { name: "Bokus", url: "https://www.bokus.com/sok?q=trumboken" },
-              { name: "Adlibris", url: "https://www.adlibris.com/se/sok?q=trumboken" },
-              { name: "CDON", url: "https://cdon.se/catalog/search?q=trumboken" }
+              { name: "Slagverket", url: "https://slagverket.se/sok?q=trumboken" },
+              { name: "Trumslagaren", url: "https://trumslagaren.se/search?q=trumboken" },
+              { name: "musikskolan.se", url: "https://musikskolan.se/search?q=trumboken" }
             ].map((retailer, i) => (
               <a 
                 key={i}
