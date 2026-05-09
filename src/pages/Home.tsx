@@ -48,7 +48,7 @@ const TESTIMONIALS = [
     title: "Frilanstrummis, Zara Larsson m.fl."
   },
   {
-    text: "Kommer!",
+    text: "Vi använder alla böckerna! En favorit är komp-kombo, ett naturligt steg för att utveckla mer avancerat trumspel.",
     author: "MARTIN SALOMONSSON",
     title: "Kulturskolan Göteborg"
   },
@@ -101,12 +101,9 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/30 border border-brand/50 text-white text-xs font-bold uppercase tracking-wider mb-8 backdrop-blur-md">
               <Drum size={14} className="text-brand" /> Sveriges enda multimodala trumbokserie
             </div>
-            <h1 className="text-6xl lg:text-8xl font-black mb-8 leading-[0.9] text-white italic uppercase tracking-tighter">
+            <h1 className="text-6xl lg:text-8xl font-black mb-10 leading-[0.9] text-white italic uppercase tracking-tighter">
               Lär dig spela <span className="text-brand">trumset</span>
             </h1>
-            <p className="text-2xl font-black text-white mb-4 uppercase italic tracking-tight">
-              Enkelt, roligt och snabbt!
-            </p>
             <p className="text-xl text-neutral-200 mb-10 max-w-lg leading-relaxed font-medium">
               Trumboken är en metodisk och stimulerande bokserie som tar dig 
               hela vägen från de första slagen till avancerat spel.
@@ -116,14 +113,8 @@ export default function Home() {
                 to="/bocker"
                 className="bg-brand text-white px-10 py-5 rounded-2xl font-black italic uppercase text-lg hover:bg-brand-dark transition-all shadow-2xl shadow-brand/40 flex items-center gap-3 transform hover:-translate-y-1 active:scale-95"
               >
-                Se alla böcker <ChevronRight size={22} />
+                LÄS MER <ChevronRight size={22} />
               </Link>
-              <a
-                href="#video"
-                className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-black italic uppercase text-lg hover:bg-white/20 transition-all flex items-center gap-3 active:scale-95"
-              >
-                <Play size={22} className="text-brand fill-brand" /> Se introduktion
-              </a>
             </div>
           </motion.div>
 
@@ -357,7 +348,7 @@ export default function Home() {
           to="/bocker"
           className="inline-flex items-center gap-2 bg-brand text-white px-10 py-5 rounded-2xl font-bold text-xl hover:bg-brand-dark transition-all shadow-2xl shadow-brand/40"
         >
-          Se alla spelböcker <ChevronRight size={24} />
+          LÄS MER <ChevronRight size={24} />
         </Link>
       </section>
     </div>
