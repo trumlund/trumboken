@@ -36,7 +36,7 @@ export default function Footer() {
       </div>
       
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-neutral-800 text-xs flex flex-col md:flex-row justify-between items-center gap-4">
-        <p>© {new Date().getFullYear()} Trumboken. Alla rättigheter reserverade. Skapad av Christer Teglund.</p>
+        <p>© 2026 CHREATÖR. Alla rättigheter reserverade.</p>
       </div>
     </footer>
   );

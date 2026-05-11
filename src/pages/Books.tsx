@@ -36,13 +36,13 @@ export default function Books() {
               viewport={{ once: true }}
               className={`flex flex-col ${i % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 items-center`}
             >
-              <div className="w-full lg:w-1/2">
+              <div className="w-full lg:w-1/2 max-w-sm lg:max-w-none mx-auto lg:mx-0">
                 <div className="relative group">
                   <div className="absolute -inset-4 bg-brand/5 rounded-[2rem] blur-2xl group-hover:bg-brand/10 transition-colors" />
                   <img 
                     src={book.imageUrl} 
                     alt={book.title} 
-                    className="relative w-full aspect-[4/5] object-cover rounded-[2rem] shadow-2xl transition-transform hover:scale-[1.02] duration-500"
+                    className="relative w-full aspect-[4/5] object-contain bg-white p-6 rounded-[2rem] shadow-2xl transition-transform hover:scale-[1.02] duration-500"
                   />
                 </div>
               </div>

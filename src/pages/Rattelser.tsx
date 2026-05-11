@@ -70,7 +70,7 @@ const Rattelser = () => {
             <div className="w-12 h-12 rounded-2xl bg-orange-100 flex items-center justify-center text-orange-600">
               <AlertCircle size={28} />
             </div>
-            <h1 className="text-4xl sm:text-5xl font-black text-neutral-900 tracking-tight italic uppercase">
+            <h1 className="text-4xl sm:text-5xl font-medium text-neutral-900 tracking-tight italic uppercase">
               Rättelser
             </h1>
           </div>
@@ -91,7 +91,7 @@ const Rattelser = () => {
                 ) : (
                   <CheckCircle2 className="text-brand shrink-0" size={24} />
                 )}
-                <h2 className="text-2xl font-black text-neutral-900 italic uppercase">
+                <h2 className="text-2xl font-medium text-neutral-900 italic uppercase">
                   {section.title}
                 </h2>
               </div>

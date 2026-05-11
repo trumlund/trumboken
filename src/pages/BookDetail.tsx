@@ -25,9 +25,10 @@ export default function BookDetail() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
+            className="max-w-md lg:max-w-none mx-auto lg:mx-0 w-full"
           >
-            <div className="bg-neutral-100 rounded-3xl overflow-hidden aspect-[4/5] shadow-inner border border-neutral-100">
-              <img src={book.imageUrl} alt={book.title} className="w-full h-full object-cover" />
+            <div className="bg-white rounded-3xl overflow-hidden aspect-[4/5] shadow-sm border border-neutral-100 p-8">
+              <img src={book.imageUrl} alt={book.title} className="w-full h-full object-contain" />
             </div>
           </motion.div>
 
@@ -78,50 +79,6 @@ export default function BookDetail() {
               </Link>
             </div>
             
-            <div className="grid grid-cols-3 gap-4 pt-8">
-              {[
-                { icon: Drum, label: "64 sidor" },
-                { icon: BookOpen, label: "Format: A4" },
-                { icon: Music, label: "Nothäfte" },
-              ].map((item, i) => (
-                <div key={i} className="text-center p-4 rounded-xl border border-neutral-100 bg-neutral-50/50">
-                  <item.icon size={20} className="mx-auto mb-2 text-neutral-400" />
-                  <div className="text-[10px] uppercase font-bold text-neutral-500">{item.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        
-        {/* Additional Info Section */}
-        <div className="mt-32 space-y-16">
-          <div className="border-t border-neutral-100 pt-16">
-            <h2 className="text-3xl font-bold mb-8">Varför välja Trumboken?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              <div>
-                <h4 className="font-bold mb-4 text-brand">Beprövad metodik</h4>
-                <p className="text-neutral-600 text-sm leading-relaxed">
-                  Utvecklad under 25 år av trumundervisning med tusentals elever. 
-                  Metodiken fokuserar på att bygga en solid grund med rätt teknik 
-                  och förståelse för rytmik.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-bold mb-4 text-brand">Progressiv inlärning</h4>
-                <p className="text-neutral-600 text-sm leading-relaxed">
-                  Varje bok bygger naturligt vidare på den föregående. 
-                  Svårighetsgraden ökar i en takt som håller motivationen 
-                  uppe utan att bli överväldigande.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-bold mb-4 text-brand">Modern & Relevant</h4>
-                <p className="text-neutral-600 text-sm leading-relaxed">
-                  Innehåller komp och övningar som är relevanta för dagens 
-                  musikstilar. Från enkla rock-beats till komplexa latin-grooves.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

@@ -106,19 +106,6 @@ export default function Trumtips() {
             </motion.section>
           ))}
         </div>
-
-        <section className="mt-20 p-12 rounded-[3rem] bg-brand text-white text-center">
-          <h2 className="text-3xl font-bold mb-4">Har du fler frågor?</h2>
-          <p className="text-brand-light text-lg mb-8 opacity-90">
-            Vi svarar gärna på dina funderingar kring trumspel och läromedel.
-          </p>
-          <Link 
-            to="/kontakt"
-            className="inline-block bg-white text-brand px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-xl transition-all"
-          >
-            KONTAKT
-          </Link>
-        </section>
       </div>
     </div>
   );

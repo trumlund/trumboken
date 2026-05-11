@@ -1,16 +1,22 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 @theme {
-  --font-sans: "Rubik", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Rubik", sans-serif;
+  --font-sans: 'Rubik', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Rubik', sans-serif;
   
   --color-brand: #098f96; /* Requested Turquoise */
   --color-brand-dark: #07747a;
 }
 
 @layer base {
+  html {
+    font-family: 'Rubik', sans-serif;
+  }
   body {
     @apply bg-neutral-50 text-neutral-900 font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   h1, h2, h3, h4, h5, h6 {

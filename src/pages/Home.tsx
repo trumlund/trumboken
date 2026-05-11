@@ -89,7 +89,7 @@ export default function Home() {
             alt="Hero Background" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-neutral-950/70 backdrop-blur-[2px]" />
+          <div className="absolute inset-0 bg-neutral-950/45 backdrop-blur-[2px]" />
         </div>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
@@ -179,53 +179,106 @@ export default function Home() {
       </section>
 
       {/* Featured Books */}
-      <section id="valj-bok" className="py-24 px-4 bg-neutral-50">
+      <section id="valj-bok" className="py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
-              <h2 className="text-4xl font-bold mb-4">Vilken bok passar dig bäst?</h2>
-              <p className="text-neutral-600 max-w-xl">
-                Varje bok är noggrant utformad för att ge dig rätt verktyg vid rätt tillfälle. 
-                Från de första takterna till avancerade polyrytmer.
-              </p>
-            </div>
-            <Link to="/bocker" className="text-brand font-bold hover:underline flex items-center gap-1">
-              Visa alla <ChevronRight size={16} />
-            </Link>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-medium text-neutral-900 mb-6 uppercase tracking-tight">Vilken bok passar dig bäst?</h2>
+            <p className="text-xl text-neutral-600">
+              Hela bokserien har en gradvis proggression!
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {BOOKS.map((book, i) => (
-              <motion.div
-                key={book.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-neutral-100"
-              >
-                <div className="aspect-[3/4] overflow-hidden bg-neutral-200">
-                  <img 
-                    src={book.imageUrl} 
-                    alt={book.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Del 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="group bg-white rounded-2xl flex flex-col items-center text-center p-8 shadow-md hover:shadow-xl transition-all border border-neutral-100"
+            >
+              <div className="w-full aspect-[4/3] mb-8 bg-neutral-100/50 rounded-xl overflow-hidden relative flex items-center justify-center p-4">
+                <img 
+                  src={BOOKS[0].imageUrl} 
+                  alt={BOOKS[0].title} 
+                  className="max-h-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-xl"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 uppercase text-neutral-800">{BOOKS[0].title}</h3>
+              <p className="text-neutral-600 mb-8 max-w-[250px]">
+                För nybörjare i alla åldrar från lågstadieålder, inga förkunskaper krävs.
+              </p>
+              <div className="mt-auto w-full">
+                <Link 
+                  to={`/bocker/${BOOKS[0].id}`}
+                  className="w-full inline-flex justify-center items-center gap-2 py-3 bg-neutral-50 text-neutral-900 font-bold rounded-xl hover:bg-neutral-100 transition-colors uppercase text-xs tracking-widest"
+                >
+                  Läs mer
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Del 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              viewport={{ once: true }}
+              className="group bg-white rounded-2xl flex flex-col items-center text-center p-8 shadow-md hover:shadow-xl transition-all border border-neutral-100"
+            >
+              <div className="w-full aspect-[4/3] mb-8 bg-neutral-100/50 rounded-xl overflow-hidden relative flex items-center justify-center p-4">
+                <img 
+                  src={BOOKS[1].imageUrl} 
+                  alt={BOOKS[1].title} 
+                  className="max-h-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-xl"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 uppercase text-neutral-800">{BOOKS[1].title}</h3>
+              <p className="text-neutral-600 mb-8 max-w-[250px]">
+                För dig som har kommit en bit med spelandet och vill utvecklas mer.
+              </p>
+              <div className="mt-auto w-full">
+                <Link 
+                  to={`/bocker/${BOOKS[1].id}`}
+                  className="w-full inline-flex justify-center items-center gap-2 py-3 bg-neutral-50 text-neutral-900 font-bold rounded-xl hover:bg-neutral-100 transition-colors uppercase text-xs tracking-widest"
+                >
+                  Läs mer
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Del 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              viewport={{ once: true }}
+              className="group bg-white rounded-2xl flex flex-col items-center text-center p-8 shadow-md hover:shadow-xl transition-all border border-neutral-100"
+            >
+              <div className="w-full aspect-[4/3] mb-8 bg-neutral-100/50 rounded-xl overflow-hidden relative flex items-center justify-center p-4">
+                <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/40 backdrop-blur-[1px]">
+                  <div className="bg-white/90 px-6 py-2 shadow-sm border border-neutral-200">
+                    <span className="text-neutral-900 font-bold italic uppercase tracking-wider text-sm">Utgivning kommer!</span>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <div className="text-brand text-xs font-bold mb-2 uppercase">{book.subtitle}</div>
-                  <h3 className="text-xl font-bold mb-3">{book.title}</h3>
-                  <p className="text-sm text-neutral-500 mb-6 line-clamp-2">
-                    {book.description}
-                  </p>
-                  <Link 
-                    to={`/bocker/${book.id}`}
-                    className="w-full inline-flex justify-center items-center gap-2 py-3 bg-neutral-50 text-neutral-900 font-bold rounded-lg hover:bg-neutral-100 transition-colors"
-                  >
-                    Läs mer
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+                <img 
+                  src={BOOKS[2].imageUrl} 
+                  alt={BOOKS[2].title} 
+                  className="max-h-full object-contain group-hover:scale-105 transition-transform duration-500 opacity-50 grayscale-[0.5]"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 uppercase text-neutral-800">{BOOKS[2].title}</h3>
+              <p className="text-neutral-600 mb-8 max-w-[250px]">
+                För dig som vill utvecklas och fördjupa dig på avancerad nivå.
+              </p>
+              <div className="mt-auto w-full">
+                <Link 
+                  to={`/bocker/${BOOKS[2].id}`}
+                  className="w-full inline-flex justify-center items-center gap-2 py-3 bg-neutral-50 text-neutral-900 font-bold rounded-xl hover:bg-neutral-100 transition-colors uppercase text-xs tracking-widest"
+                >
+                  Läs mer
+                </Link>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -322,7 +375,7 @@ export default function Home() {
                 href={retailer.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-8 rounded-2xl bg-neutral-50 border border-neutral-100 flex flex-col items-center justify-center hover:bg-white hover:shadow-xl hover:border-brand/20 transition-all"
+                className="group p-8 rounded-2xl bg-[#e6fcfa] border border-cyan-100 flex flex-col items-center justify-center hover:bg-white hover:shadow-xl hover:border-brand/20 transition-all font-sans"
               >
                 <div className="text-xl font-bold text-neutral-900 group-hover:text-brand transition-colors mb-2">
                   {retailer.name}
@@ -341,14 +394,28 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-4 text-center">
-        <h2 className="text-5xl font-bold mb-8">Redo att börja din resa?</h2>
-        <Link
-          to="/bocker"
-          className="inline-flex items-center gap-2 bg-brand text-white px-10 py-5 rounded-2xl font-bold text-xl hover:bg-brand-dark transition-all shadow-2xl shadow-brand/40"
-        >
-          LÄS MER <ChevronRight size={24} />
-        </Link>
+      <section className="relative py-40 px-4 text-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://trumboken.se/wp-content/uploads/2023/10/DSC00067-2.webp" 
+            alt="CTA Background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-neutral-950/60" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <h2 className="text-5xl font-bold mb-8 text-white drop-shadow-lg">
+            Redo att börja din resa?
+          </h2>
+          <Link
+            to="/bocker"
+            className="inline-flex items-center gap-2 bg-brand text-white px-12 py-6 rounded-2xl font-black italic uppercase text-xl hover:bg-white hover:text-brand transition-all shadow-2xl shadow-black/40 transform hover:-translate-y-1 active:scale-95"
+          >
+            LÄS MER <ChevronRight size={28} />
+          </Link>
+        </div>
       </section>
     </div>
   );

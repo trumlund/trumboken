@@ -422,28 +422,6 @@ export default function Lararsida() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="p-12 rounded-[3rem] bg-neutral-50 border border-neutral-200 text-neutral-900 relative overflow-hidden text-center"
-        >
-          <div className="absolute top-0 left-0 w-full h-full opacity-5 bg-[radial-gradient(circle_at_top_right,var(--color-brand),transparent)] pointer-events-none" />
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <Mail className="mx-auto mb-6 text-brand" size={48} />
-            <h2 className="text-3xl font-black italic mb-6 uppercase">Frågor eller feedback?</h2>
-            <p className="text-neutral-600 mb-10 text-lg font-medium leading-relaxed">
-              Har du förslag på material som saknas eller vill du veta mer om hur andra jobbar med böckerna? Hör av dig!
-            </p>
-            <a 
-              href="mailto:info@chreator.se"
-              className="inline-flex bg-brand text-white px-10 py-5 rounded-2xl font-black text-lg hover:bg-brand-dark transition-all hover:scale-105"
-            >
-              KONTAKT
-            </a>
-          </div>
-        </motion.div>
       </div>
     </div>
   );
