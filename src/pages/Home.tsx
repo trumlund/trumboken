@@ -306,16 +306,16 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Butiker</h2>
             <p className="text-neutral-600 max-w-2xl mx-auto">
-              Köp Trumboken i din lokala musikaffär eller på nätet.
+              Köp Trumboken via dessa återförsäljare, i din lokala musikaffär eller hos bokhandlarna på nätet (Google).
             </p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { name: "Notposten", url: "https://notposten.se/search?q=trumboken" },
-              { name: "Slagverket", url: "https://slagverket.se/sok?q=trumboken" },
-              { name: "Trumslagaren", url: "https://trumslagaren.se/search?q=trumboken" },
-              { name: "musikskolan.se", url: "https://musikskolan.se/search?q=trumboken" }
+              { name: "Slagverket", url: "https://slagverket.com" },
+              { name: "Trumslagaren", url: "https://trumslagaren.se" },
+              { name: "musikskolan.se", url: "https://musikskolan.se" }
             ].map((retailer, i) => (
               <a 
                 key={i}
