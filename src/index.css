@@ -7,6 +7,7 @@
   
   --color-brand: #098f96; /* Requested Turquoise */
   --color-brand-dark: #07747a;
+  --color-brand-darker: #044347;
 }
 
 @layer base {

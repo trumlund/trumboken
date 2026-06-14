@@ -153,27 +153,46 @@ export default function Home() {
 
 
       {/* Alla kan trumma! Section */}
-      <section className="py-24 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-medium text-neutral-900 mb-6">Alla kan trumma!</h2>
-            <p className="text-xl text-neutral-700 leading-relaxed font-medium">
-              Med tydliga förklaringar och alla videolektioner kommer du som nybörjare snabbt igång att spela – inga förkunskaper krävs!
-            </p>
-          </div>
-          
-          <div className="space-y-8 text-lg text-neutral-600 leading-relaxed">
-            <p>
-              Med övningslåtarna och massor av förslag på kända hits lär du dig spela olika musikstilar från hela världen. Du utvecklar ditt gehör, musikalitet, lär dig notläsning och förståelsen som musik som språk!
-            </p>
+      <section className="py-24 px-4 bg-white overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            <p>
-              Här på trumboken.se hittar du också en nybörjarguide, lättlästa noter på vissa låtförslag, praktiska tips och en lärarsida med pedagogiska resurser.
-            </p>
-            
-            <p className="text-2xl font-display font-bold text-brand text-center pt-4">
-              Nu spelar vi!
-            </p>
+            {/* Left/Text Column */}
+            <div className="lg:col-span-7 space-y-6">
+              <h2 className="text-4xl lg:text-5xl font-medium text-neutral-900 uppercase tracking-tight">Alla kan trumma!</h2>
+              <p className="text-xl text-neutral-700 leading-relaxed font-semibold">
+                Med tydliga förklaringar och alla videolektioner kommer du som nybörjare snabbt igång att spela – inga förkunskaper krävs!
+              </p>
+              
+              <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
+                <p>
+                  Med övningslåtarna och massor av förslag på kända hits lär du dig spela olika musikstilar från hela världen. Du utvecklar ditt gehör, musikalitet, lär dig notläsning och förståelsen som musik som språk!
+                </p>
+                
+                <p>
+                  Här på trumboken.se hittar du också en nybörjarguide, lättlästa noter på vissa låtförslag, praktiska tips och en lärarsida med pedagogiska resurser.
+                </p>
+              </div>
+
+              <div className="pt-4">
+                <p className="text-2xl font-display font-black italic uppercase text-brand tracking-wider">
+                  Nu spelar vi!
+                </p>
+              </div>
+            </div>
+
+            {/* Right/Image Column */}
+            <div className="lg:col-span-5 relative">
+              {/* Soft supportive background decoration */}
+              <div className="absolute -inset-4 bg-brand/5 rounded-[2.5rem] blur-2xl -z-10" />
+              <img 
+                src="/src/assets/images/happy_drummer_1781456208664.jpg" 
+                alt="Flicka som spelar trummor glatt" 
+                className="w-full h-auto object-cover rounded-[2rem] shadow-xl border-4 border-white aspect-[4/3] sm:aspect-[4/3]" 
+                referrerPolicy="no-referrer"
+              />
+            </div>
+
           </div>
         </div>
       </section>
@@ -340,9 +359,10 @@ export default function Home() {
               Ta en tjuvtitt! Här kan du bläddra direkt i boken och se hur den ser ut inuti.
             </p>
             
-            <div className="bg-neutral-800/50 p-6 rounded-xl border border-neutral-700 inline-block">
-              <p className="text-sm text-neutral-400 leading-relaxed italic">
-                <span className="text-brand font-bold not-italic">OBS!</span> Böckerna har spiralbindning (wire-o) och blir därför enkla att ha på ett notställ!
+            <div className="bg-brand-darker p-6 rounded-2xl inline-block shadow-lg max-w-xl">
+              <p className="text-sm text-white leading-relaxed font-semibold">
+                <span className="bg-amber-400 text-neutral-950 font-black not-italic px-2 py-0.5 rounded-md mr-2 text-xs uppercase tracking-wider shadow-sm">OBS!</span> 
+                Böckerna har spiralbindning (wire-o) och blir därför enkla att ha på ett notställ!
               </p>
             </div>
           </div>
