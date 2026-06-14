@@ -1,10 +1,23 @@
 import { motion } from "motion/react";
 import { useState } from "react";
-import { Play, BookOpen, Star, ChevronRight, Drum, CheckCircle2, Volume2, Plus } from "lucide-react";
+import { Play, BookOpen, Star, ChevronRight, Drum, CheckCircle2, Volume2, Plus, Instagram, Facebook, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 
 import { BOOKS } from "../constants/books";
 import PDFViewer from "../components/PDFViewer";
+
+const TiktokIcon = ({ size = 24, className = "" }: { size?: number, className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    stroke="none"
+    width={size}
+    height={size}
+    className={className}
+  >
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.62 2.89 2.89 0 0 1 2.31-4.5 2.88 2.88 0 0 1 1.01.18V9.5a6.31 6.31 0 0 0-1-.08 6.33 6.33 0 0 0-5.18 9.93 6.33 6.33 0 0 0 10.35-4.27V8.55a8.21 8.21 0 0 0 4.69 1.48v-3.34z" />
+  </svg>
+);
 
 const TESTIMONIALS = [
   {
@@ -186,9 +199,9 @@ export default function Home() {
               {/* Soft supportive background decoration */}
               <div className="absolute -inset-4 bg-brand/5 rounded-[2.5rem] blur-2xl -z-10" />
               <img 
-                src="/src/assets/images/happy_drummer_1781456208664.jpg" 
+                src="/src/assets/images/happy_drummer_bosphorus_1781456732370.jpg" 
                 alt="Flicka som spelar trummor glatt" 
-                className="w-full h-auto object-cover rounded-[2rem] shadow-xl border-4 border-white aspect-[4/3] sm:aspect-[4/3]" 
+                className="w-full h-auto object-cover rounded-[2rem] shadow-xl border-4 border-white aspect-[4/3] sm:aspect-[4/3]"  
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -426,15 +439,51 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold mb-8 text-white drop-shadow-lg">
-            Redo att börja din resa?
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black italic uppercase text-white mb-4 tracking-wider drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
+            FÖLJ TRUMBOKEN!
           </h2>
-          <Link
-            to="/bocker"
-            className="inline-flex items-center gap-2 bg-brand text-white px-12 py-6 rounded-2xl font-black italic uppercase text-xl hover:bg-white hover:text-brand transition-all shadow-2xl shadow-black/40 transform hover:-translate-y-1 active:scale-95"
-          >
-            LÄS MER <ChevronRight size={28} />
-          </Link>
+          <p className="text-lg sm:text-xl md:text-2xl text-neutral-200 font-medium max-w-2xl mx-auto mb-12 drop-shadow-[0_1px_5px_rgba(0,0,0,0.5)]">
+            Bonusvideor, inspiration, utmaningar och annat!
+          </p>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto px-4">
+            <a 
+              href="https://www.tiktok.com/@trumboken"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 bg-white/10 hover:bg-neutral-900 border border-white/20 hover:border-black text-white px-5 py-4 rounded-2xl transition-all duration-300 font-bold text-lg hover:scale-105 active:scale-95 shadow-xl hover:shadow-black/30"
+            >
+              <TiktokIcon size={24} />
+              <span>Tiktok</span>
+            </a>
+            <a 
+              href="https://www.instagram.com/trumboken.se"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 bg-white/10 hover:bg-gradient-to-tr hover:from-amber-500 hover:to-purple-600 border border-white/20 hover:border-transparent text-white px-5 py-4 rounded-2xl transition-all duration-300 font-bold text-lg hover:scale-105 active:scale-95 shadow-xl hover:shadow-purple-900/30"
+            >
+              <Instagram size={24} />
+              <span>Instagram</span>
+            </a>
+            <a 
+              href="https://www.youtube.com/@trumboken"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 bg-white/10 hover:bg-rose-600 border border-white/20 hover:border-rose-600 text-white px-5 py-4 rounded-2xl transition-all duration-300 font-bold text-lg hover:scale-105 active:scale-95 shadow-xl hover:shadow-rose-900/30"
+            >
+              <Youtube size={24} />
+              <span>Youtube</span>
+            </a>
+            <a 
+              href="https://www.facebook.com/trumboken"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 bg-white/10 hover:bg-blue-600 border border-white/20 hover:border-blue-600 text-white px-5 py-4 rounded-2xl transition-all duration-300 font-bold text-lg hover:scale-105 active:scale-95 shadow-xl hover:shadow-blue-900/30"
+            >
+              <Facebook size={24} />
+              <span>Facebook</span>
+            </a>
+          </div>
         </div>
       </section>
     </div>
