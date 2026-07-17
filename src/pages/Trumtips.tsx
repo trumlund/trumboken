@@ -11,7 +11,7 @@ export default function Trumtips() {
       content: "Välkommen till trummornas värld! Vår kompletta nybörjarguide guidar dig som är helt grön steg-för-steg genom den spännande starten. Vi hjälper dig att välja rätt typ av trumset (akustiskt eller digitalt utifrån dina hemförhållanden), visar hur du hittar rätt storlek på trumpinnar (t.ex. de mångsidiga 5A eller tunnare 7A för de mindre händerna), går igenom hälsa och ergonomi för att du ska sitta helt rätt bakom setet utan skador, samt ger praktiska tips för att göra dina allra första slag med perfekt kontroll och spelkänsla.",
       link: "/nyborjarguide",
       linkText: "Läs nybörjarguiden",
-      image: "/src/assets/images/drumsticks_on_snare_1781457481882.jpg"
+      image: "/images/drumsticks_on_snare_1781457481882.jpg"
     },
     {
       id: "ag-ditt-ovande",
@@ -39,21 +39,21 @@ export default function Trumtips() {
           </div>
         </div>
       ),
-      image: "/src/assets/images/drummer_live_concert_show_1781468702406.jpg"
+      image: "/images/drummer_live_concert_show_1781468702406.jpg"
     },
     {
       id: "digital",
       title: "Digital-trumset?",
       icon: Volume2,
       content: "Många väljer idag ett digitalt trumset för att kunna öva hemma utan att störa grannar eller familj. De har blivit fantastiskt bra och har numera tysta trumskinn (mesh heads/nätfällar) som ger en realistisk studs. Det finns dock viktiga skillnader i spelkänsla, dynamik och ljudåtergivning jämfört med akustiska trummor. Här går vi igenom vad du bör hålla utkik efter inför köpet, så som stabila pedaler, nättrummor med bra dämpning, inbyggda play-along-spår och trummodulens anslutningsmöjligheter.",
-      image: "/src/assets/images/electronic_drum_kit_1781457500210.jpg"
+      image: "/images/electronic_drum_kit_1781457500210.jpg"
     },
     {
       id: "noter",
       title: "Behöver jag kunna noter?",
       icon: Music2,
       content: "Det korta svaret är nej, inte för att börja ha superkul! Men notläsning är ett ovärderligt verktyg för att snabbare lära dig nya låtar, hålla ordning på komplexa fills och spara tid. Trumnoter är faktiskt mycket enklare än traditionella melodinoter, eftersom varje del av trumsetet (virvel, bastrumma, cymbaler) har en fast och logisk plats på notlinjerna. I Trumboken lär vi oss notläsning naturligt och steg-för-steg genom bilder, ramsor och korta videoflikar.",
-      image: "/src/assets/images/sheet_music_drums_1781457516361.jpg"
+      image: "/images/sheet_music_drums_1781457516361.jpg"
     }
   ];
 

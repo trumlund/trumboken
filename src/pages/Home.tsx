@@ -199,7 +199,7 @@ export default function Home() {
               {/* Soft supportive background decoration */}
               <div className="absolute -inset-4 bg-brand/5 rounded-[2.5rem] blur-2xl -z-10" />
               <img 
-                src="/src/assets/images/happy_drummer_bosphorus_1781456732370.jpg" 
+                src="/images/happy_drummer_bosphorus_1781456732370.jpg" 
                 alt="Flicka som spelar trummor glatt" 
                 className="w-full h-auto object-cover rounded-[2rem] shadow-xl border-4 border-white aspect-[4/3] sm:aspect-[4/3]"  
                 referrerPolicy="no-referrer"
