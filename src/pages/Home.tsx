@@ -98,7 +98,7 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://trumboken.se/wp-content/uploads/2026/05/ChatGPT-Image-8-maj-2026-14_44_29.png" 
+            src="/images/ChatGPT-Image-8-maj-2026-14_44_29.png" 
             alt="Hero Background" 
             className="w-full h-full object-cover"
           />
@@ -431,7 +431,7 @@ export default function Home() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://trumboken.se/wp-content/uploads/2023/10/DSC00067-2.webp" 
+            src="/images/drummer_live_concert_show_1781468702406.jpg" 
             alt="CTA Background" 
             className="w-full h-full object-cover"
           />

@@ -23,12 +23,12 @@ const Page = forwardRef<HTMLDivElement, PageProps>((props, ref) => {
 export default function PDFViewer() {
   const [currentPage, setCurrentPage] = useState(0);
   const bookRef = useRef<any>(null);
-  const totalPages = 20;
+  const totalPages = 19;
 
   const images = Array.from({ length: totalPages }, (_, i) => {
     const num = i + 1;
-    if (num === 1) return "https://trumboken.se/wp-content/uploads/2021/09/TB1-fram.jpg";
-    return `https://trumboken.se/wp-content/uploads/2026/05/${num}.jpg`;
+    if (num === 1) return "/images/TB1-fram.jpg";
+    return `/images/${num}.jpg`;
   });
 
   const onPage = (e: any) => {

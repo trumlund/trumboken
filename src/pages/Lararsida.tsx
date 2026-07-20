@@ -16,7 +16,7 @@ export default function Lararsida() {
         { 
           name: "Alla Spotify-listor i böckerna!", 
           url: "https://open.spotify.com/artist/7nMJpFV1wiUXFjevtrXECB?si=UgoyWYpuTxeSvAzh5WNrQg&nd=1&dlsi=85908dfc813645d0",
-          iconImg: "https://trumboken.se/wp-content/uploads/2023/05/Sociala-ikoner-05.png"
+          iconImg: "/images/spotify.jpg"
         },
         { name: "Alla videolektioner del 1 (offentliga) som spellista på Youtube", url: "https://www.youtube.com/playlist?list=PLGrOu3RDYprn_NaEN5Jd2vmymMWjeT-z_" },
         { 
@@ -31,12 +31,12 @@ export default function Lararsida() {
       title: "ÖVNINGSLÅTARNA UTAN KLICK",
       description: "Vill du eller dina elever spela upp övningslåtarna utan klick? Kanske med klick i egna hörlurar men inte ut i PA?",
       icon: Headphones,
-      image: "https://trumboken.se/wp-content/uploads/2023/12/Bandcamp-logo-768x432.png",
+      image: "/images/Bandcamp-logo-768x432.png",
       items: [
         { 
           name: "Trumboken på Bandcamp.com", 
           url: "https://trumboken.bandcamp.com/",
-          iconImg: "https://trumboken.se/wp-content/uploads/2023/05/Sociala-ikoner-07.png"
+          iconImg: "/images/USP_youtube.jpg"
         }
       ]
     },
@@ -46,9 +46,9 @@ export default function Lararsida() {
       description: "Här kan du ladda ner diplom till dina elever när de är klara med böckerna!\n\nKlicka på bilderna för nedladdning.",
       icon: Award,
       images: [
-        { img: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB1-thumb-768x1013.jpg", url: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB1.pdf" },
-        { img: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB2-thumb-768x1013.jpg", url: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB2.pdf" },
-        { img: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB3-thumb-768x1013.jpg", url: "https://trumboken.se/wp-content/uploads/2023/05/Diplom-TB3.pdf" }
+        { img: "/PDF/Diplom-TB1-thumb.jpg", url: "/PDF/Diplom-TB1.pdf" },
+        { img: "/PDF/Diplom-TB2-thumb.jpg", url: "/PDF/Diplom-TB2.pdf" },
+        { img: "/PDF/Diplom-TB3-thumb.jpg", url: "/PDF/Diplom-TB3.pdf" }
       ],
       items: []
     },
@@ -113,9 +113,9 @@ export default function Lararsida() {
       title: "TRUMNYCKEL",
       description: "En trumnyckel i A3 att ladda ner. Skriv ut och sätt upp på väggen!",
       icon: Layout,
-      image: "https://trumboken.se/wp-content/uploads/2020/04/Trumsetet_som_noter_A3.jpg",
+      image: "/images/Trumsetet_som_noter_A3.jpg",
       items: [
-        { name: "Ladda ner Trumnyckel (A3)", url: "https://trumboken.se/wp-content/uploads/2022/10/Trumnyckel-A3.pdf" }
+        { name: "Ladda ner Trumnyckel (A3)", url: "/PDF/Trumsetet_som_noter_A3.pdf" }
       ]
     },
     {
@@ -125,9 +125,9 @@ export default function Lararsida() {
       icon: Waves,
       isFullWidth: true,
       items: [
-        { name: "Ladda ned Tavelnoter för whiteboard (med rytmramsor)", url: "https://trumboken.se/wp-content/uploads/2023/12/Tavelnoter-m-ramsor.pdf" },
-        { name: "Ladda ned Tavelnoter utan ramsor", url: "https://trumboken.se/wp-content/uploads/2023/12/Tavelnoter-utan-ramsor.pdf" },
-        { name: "Ladda ned Rytmbingo (fritt att använda)", url: "https://trumboken.se/wp-content/uploads/2022/10/Rytmbingo.pdf" }
+        { name: "Ladda ned Tavelnoter för whiteboard (med rytmramsor)", url: "/PDF/Tavelnoter-TB_lowres.pdf" },
+        { name: "Ladda ned Tavelnoter utan ramsor", url: "/PDF/Tavelnoter-Ordlosa_lowres.pdf" },
+        { name: "Ladda ned Rytmbingo (fritt att använda)", url: "/PDF/Tavelnoter-Allmanna_lowres.pdf" }
       ],
       subsections: [
         {
@@ -169,7 +169,7 @@ export default function Lararsida() {
         {
           subtitle: "Tips 1: Förebildstavla",
           text: "Gör en förebildstavla med stilbildande/inspirerande trummisar (eller slagverkare) till lektionssalen som kan locka till frågor om vilka de är osv. Ge elever i hemläxa att välja ut ett Youtube-klipp/trumsolo som de gillar med en viss trummis.\n\nEtt exempel på en tavla som en av mina elever gjorde till sitt rum:",
-          image: "https://trumboken.se/wp-content/uploads/2020/04/90603642_1681584081997367_1908201948968910848_n.jpg"
+          image: "/images/90603642_1681584081997367_1908201948968910848_n.jpg"
         },
         {
           subtitle: "Tips 2: Elevförebilder",

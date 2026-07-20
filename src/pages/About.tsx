@@ -22,7 +22,7 @@ export default function About() {
           >
             <div className="rounded-[2.5rem] overflow-hidden shadow-2xl shadow-brand/10 border-8 border-white bg-neutral-100 aspect-[4/5] relative">
               <img 
-                src="input_file_0.png" 
+                src="/images/IMG_0252-900px.jpg" 
                 alt="Christer Teglund" 
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"

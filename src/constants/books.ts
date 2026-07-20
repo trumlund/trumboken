@@ -16,7 +16,7 @@ export const BOOKS: Book[] = [
     subtitle: "För nybörjare",
     description: "En grundläggande spelbok för dig som vill börja spela trummor. Här lär du dig grunderna i teknik, kordination och notläsning genom roliga övningar och låtar.",
     price: "249 kr",
-    imageUrl: "https://trumboken.se/wp-content/uploads/2021/09/Trumboken-wire-o-SNEDA-1.jpg",
+    imageUrl: "/images/Trumboken-wire-o-SNEDA-1.jpg",
     features: [
       "Grundläggande kordination",
       "Notläsning för trummor",
@@ -31,7 +31,7 @@ export const BOOKS: Book[] = [
     subtitle: "Fortsättning",
     description: "Fortsättningsboken som tar dig vidare med mer avancerade komp, fills och olika genrer. Utveckla din spelteknik och musikalitet.",
     price: "269 kr",
-    imageUrl: "https://trumboken.se/wp-content/uploads/2021/09/Trumboken-wire-o-SNEDA-2.jpg",
+    imageUrl: "/images/Trumboken-wire-o-SNEDA-2.jpg",
     features: [
       "Avancerade fills",
       "Olika genrer (Rock, Pop, Funk)",
@@ -46,7 +46,7 @@ export const BOOKS: Book[] = [
     subtitle: "Avancerad nivå",
     description: "För dig som kommit långt och vill bemästra trumsetet. Fokus på polyrytmer, udda taktarter och sofistikerat spel.",
     price: "289 kr",
-    imageUrl: "https://trumboken.se/wp-content/uploads/2021/09/Trumboken-wire-o-SNEDA-3_1.jpg",
+    imageUrl: "/images/Trumboken-wire-o-SNEDA-3_1.jpg",
     features: [
       "Polyrytmer",
       "Udda taktarter",
